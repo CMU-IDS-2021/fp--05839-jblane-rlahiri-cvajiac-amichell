@@ -7,6 +7,7 @@ Created on Thu Apr  8 08:41:01 2021
 """
 #cd /Users/jblane/Desktop/CMUClasses/S21\ -\ Interactive\ Data\ Science/fp--05839-jblane-rlahiri-cvajiac-amichell
 # streamlit run intro_streamlitapp.py
+# streamlit run main_streamlitapp.py
 
 import streamlit as st
 import streamlit.components.v1 as components
