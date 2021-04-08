@@ -4,7 +4,7 @@
 * **Team members**:
   * Contact person: Janice Blane, jblane@andrew.cmu.edu
   * Riddhiman Lahiri, rlahiri@andrew.cmu.edu
-  * Andre Michell, amichell@andrew.cmu.edu
+  * André Michell, amichell@andrew.cmu.edu
   * Catalina Vajiac, cvajiac@andrew.cmu.edu
 * **Track**: Interactive Application
 
