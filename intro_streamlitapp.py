@@ -22,13 +22,11 @@ from datetime import date
 #     """
 #     )
 
-st.title("⭐Towards a Better Spark UI⭐")
+st.title("⭐Why Do We Need a Better Spark UI?⭐")
 st.text("An Interactive Visualization")
 
 st.markdown("---")
-st.markdown("_**Welcome!**_" )
-st.markdown(" Stuff...and more stuff.")
-
+st.markdown("_**Here's what Spark results look like now:**_" )
 components.html(
     """
     <!DOCTYPE html>
@@ -79,7 +77,7 @@ components.html(
     </head>
     <body>
     
-    <h2>Current Results View</h2>
+    <!--<h2>Current Results View</h2>-->
     <!--<p>Hover over the image to see the effect.</p>-->
     
     <div class="container">
@@ -92,9 +90,13 @@ components.html(
     </body>
     </html>
     """,
-    height=500,
+    height=1000,
     )
-
+st.markdown("""This UI displays some useful information, such as the job duration, stages, and a progress bar.
+            However, all the information is displayed in tabular format and we don’t see a lot of useful information,
+            such as memory usage or shuffle read/writes. While this information is available, it is not presented with
+            effective visual encodings that identify clearly the implication of different characteristics of Spark jobs.
+            Furthermore, once the end user has hundreds or thousands of jobs, these tables become impossible to parse.""")
 
 # #colapsible grouping, only shows items one at a time
 # components.html(
