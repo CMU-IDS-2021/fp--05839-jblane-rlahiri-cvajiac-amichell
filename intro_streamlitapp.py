@@ -79,13 +79,13 @@ components.html(
     </head>
     <body>
     
-    <h2>Fade in Overlay</h2>
-    <p>Hover over the image to see the effect.</p>
+    <h2>Current Results View</h2>
+    <!--<p>Hover over the image to see the effect.</p>-->
     
     <div class="container">
-      <img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/img_avatar.png?raw=true" alt="Avatar" class="image">
+      <img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/job_example.png?raw=true" alt="Current Spark Results" class="image">
       <div class="overlay">
-        <div class="text">Hello World</div>
+        <div class="text">Some useful stuff, but how to make sense of it?!</div>
       </div>
     </div>
     
