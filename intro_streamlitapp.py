@@ -15,12 +15,12 @@ import altair as alt
 from datetime import date
 
 #random orange background color
-components.html(
-    """
-    <body style="background-color:#ffcc00"
-    </body>
-    """
-    )
+# components.html(
+#     """
+#     <body style="background-color:#ffcc00"
+#     </body>
+#     """
+#     )
 
 st.title("⭐Towards a Better Spark UI⭐")
 st.text("An Interactive Visualization")
@@ -83,7 +83,7 @@ components.html(
     <p>Hover over the image to see the effect.</p>
     
     <div class="container">
-      <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="image">
+      <img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/img_avatar.png?raw=true" alt="Avatar" class="image">
       <div class="overlay">
         <div class="text">Hello World</div>
       </div>
@@ -147,9 +147,9 @@ components.html(
 
 # #---A search field to nowhere example -css makes the blue background---#
 
-# def local_css(file_name):
-#     with open(file_name) as f:
-#         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # def remote_css(url):
 #     st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)    
@@ -157,7 +157,7 @@ components.html(
 # def icon(icon_name):
 #     st.markdown(f'<i class="material-icons">{icon_name}</i>', unsafe_allow_html=True)
 
-# local_css("style.css")
+local_css("style.css")
 # remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
 
 # icon("outdoor_grill") #use word list of google icons: https://fonts.google.com/icons
