@@ -87,3 +87,15 @@ suffle_read_button=st.sidebar.radio("Show shuffle read and write quantities",("Y
 
 Dataio_button=st.sidebar.radio("Show data input and output",("Yes","No"))
 
+if st.checkbox("Optimization 1"):
+    #TODO
+    st.write("Implement Optimization 1 on Data Set")
+    
+if st.checkbox("Optimization 2"):
+    #TODO
+    st.write("Implement Optimization 2 on Data Set")
+    
+    
+if st.checkbox("Optimization 3"):
+    #TODO 
+    st.write("Implement Optimization 3 on Data Set")
