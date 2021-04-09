@@ -72,7 +72,25 @@ st.sidebar.markdown("## Select Optimization")
 #vmax = st.sidebar.slider('Colorbar Max Energy', 10, 500, 25)  # min, max, default
 #qcenter = st.sidebar.slider('Data', 5, 120, 5)  # min, max, default
 #qrange = (int(qcenter*0.8), int(qcenter*1.2))
-
+@st.cache(allow_output_mutation=True)
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+def set_png_as_page_bg(png_file):
+    bin_str = get_base64_of_bin_file(png_file)
+    page_bg_img = '''
+    <style>
+    body {
+    background-image: url("data:image/png;base64,%s");
+    background-size: cover;
+    opacity: 1;
+    }
+    </style>
+    ''' % bin_str
+    
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+    return
 task = st.selectbox(
         "Which problem do you want to Visualize?", ["Word Count","Spark for ML","Apply Optimizations to an Extract, Transform, Load (ETL) job"])
 plot=alt.Chart(source).mark_bar().encode(
