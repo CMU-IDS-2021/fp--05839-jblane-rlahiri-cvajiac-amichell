@@ -73,5 +73,17 @@ st.sidebar.markdown("## Select Optimization")
 #qcenter = st.sidebar.slider('Data', 5, 120, 5)  # min, max, default
 #qrange = (int(qcenter*0.8), int(qcenter*1.2))
 
+task = st.selectbox(
+        "Which problem do you want to Visualize?", ["Word Count","Spark for ML","Apply Optimizations to an Extract, Transform, Load (ETL) job"])
+plot=alt.Chart(source).mark_bar().encode(
+    alt.X("IMDB_Rating:Q"),
+    y='count()',
+    
+).properties(width=400,
+    height=200)
+data_spill_button=st.sidebar.radio("Show data spill to memory and disk",("Yes","No"))
 
+suffle_read_button=st.sidebar.radio("Show shuffle read and write quantities",("Yes","No"))
+
+Dataio_button=st.sidebar.radio("Show data input and output",("Yes","No"))
 
