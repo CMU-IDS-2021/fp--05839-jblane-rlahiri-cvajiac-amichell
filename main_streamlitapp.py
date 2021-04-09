@@ -59,18 +59,5 @@ components.html(
     )
 
 
-st.markdown("""
- * Use the menu at left to select data and set plot parameters
- * Your plots will appear below
-""")
-
-
-st.sidebar.markdown("## Select Optimization")
-#set_png_as_page_bg('apache-spark1.jpg')
-
-#st.sidebar.markdown('#### Q-tranform plot')
-#vmax = st.sidebar.slider('Colorbar Max Energy', 10, 500, 25)  # min, max, default
-#qcenter = st.sidebar.slider('Data', 5, 120, 5)  # min, max, default
-#qrange = (int(qcenter*0.8), int(qcenter*1.2))
 
 
