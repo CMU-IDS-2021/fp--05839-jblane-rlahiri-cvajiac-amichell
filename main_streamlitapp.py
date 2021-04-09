@@ -12,9 +12,6 @@ import pandas as pd
 import altair as alt
 from datetime import date
 
-from vega_datasets import data
-
-source = data.movies.url
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
