@@ -66,7 +66,7 @@ st.markdown("""
 
 
 st.sidebar.markdown("## Select Optimization")
-set_png_as_page_bg('apache-spark1.jpg')
+#set_png_as_page_bg('apache-spark1.jpg')
 
 #st.sidebar.markdown('#### Q-tranform plot')
 #vmax = st.sidebar.slider('Colorbar Max Energy', 10, 500, 25)  # min, max, default
