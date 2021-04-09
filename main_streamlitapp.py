@@ -58,7 +58,7 @@ components.html(
     height=200
     )
 
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 st.markdown("""
  * Use the menu at left to select data and set plot parameters
  * Your plots will appear below
@@ -99,3 +99,19 @@ if st.checkbox("Optimization 2"):
 if st.checkbox("Optimization 3"):
     #TODO 
     st.write("Implement Optimization 3 on Data Set")
+col1, col2, col3 = st.beta_columns(3)
+if data_spill_button=="Yes":
+    col1.header("Data Spill to Memory and Disk")
+    col1.write(plot)
+    #row2_1, row2_2, row2_3 = st.beta_columns((2,1,1))
+
+if suffle_read_button=="Yes":
+    col2.header("Shuffle Read and Write")
+    col2.write(plot)
+if Dataio_button=="Yes":
+    col3.header("Data input and output")
+    col3.write(plot)
+st.write("** Display Data after Optimizations**")
+optimized=st.radio("",("Yes","No"))
+if optimized=="Yes":
+    st.write(plot.properties(width=600,height=300))
