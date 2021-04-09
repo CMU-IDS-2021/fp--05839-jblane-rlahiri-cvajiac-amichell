@@ -56,7 +56,7 @@ components.html(
     </body>
     </html>
     """,
-    height=200
+    height=100
     )
 
 #st.set_page_config(layout="wide")
