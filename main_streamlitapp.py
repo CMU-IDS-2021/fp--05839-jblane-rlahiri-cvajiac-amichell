@@ -58,7 +58,7 @@ components.html(
     height=200
     )
 
-#st.set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 st.markdown("""
  * Use the menu at left to select data and set plot parameters
  * Your plots will appear below
