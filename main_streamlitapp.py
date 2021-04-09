@@ -83,7 +83,7 @@ def set_png_as_page_bg(png_file):
     page_bg_img = '''
     <style>
     body {
-    background-image: url("data:image/png;base64,%s");
+    background-image: url("data:image/jpg;base64,%s");
     background-size: cover;
     opacity: 1;
     }
