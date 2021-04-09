@@ -91,6 +91,7 @@ def set_png_as_page_bg(png_file):
     
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
+set_png_as_page_bg('apache-spark1.jpg')
 task = st.selectbox(
         "Which problem do you want to Visualize?", ["Word Count","Spark for ML","Apply Optimizations to an Extract, Transform, Load (ETL) job"])
 plot=alt.Chart(source).mark_bar().encode(
