@@ -16,11 +16,11 @@ import base64
 from vega_datasets import data
 source = data.movies.url
 st.set_page_config(layout="wide")
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+#def local_css(file_name):
+#    with open(file_name) as f:
+#        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-local_css("style.css")
+#local_css("style.css")
 
 st.title("⭐Towards a Better Spark UI⭐")
 st.text("An Interactive Visualization")
