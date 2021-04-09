@@ -11,7 +11,7 @@ import streamlit.components.v1 as components
 import pandas as pd
 import altair as alt
 from datetime import date
-#from vega_datasets import data
+from vega_datasets import data
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
