@@ -11,6 +11,8 @@ import streamlit.components.v1 as components
 import pandas as pd
 import altair as alt
 from datetime import date
+import collections
+import base64
 from vega_datasets import data
 source = data.movies.url
 def local_css(file_name):
