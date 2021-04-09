@@ -24,6 +24,19 @@ local_css("style.css")
 
 st.title("⭐Towards a Better Spark UI⭐")
 st.text("An Interactive Visualization")
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://spark.apache.org/images/spark-logo-back.png");
+background-size: cover;
+}
+</style>
+'''
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+
+
 
 #components.html(
 #    """
