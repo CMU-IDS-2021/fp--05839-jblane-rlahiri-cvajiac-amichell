@@ -18,7 +18,7 @@ import awesome_streamlit as ast
 import home
 import interface
 #import src.style
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 #st.set_page_config(layout="wide")
 ast.core.services.other.set_logging_format()
 
