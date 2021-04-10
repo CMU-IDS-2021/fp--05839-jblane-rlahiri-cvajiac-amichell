@@ -27,7 +27,7 @@ import awesome_streamlit as ast
 #    "Main Interface": interface,
     #"Interface": src.resources,
 
-}
+#}
 def main():
     """Main function of the App"""
     st.sidebar.title("Navigation")
