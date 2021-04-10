@@ -15,28 +15,28 @@ import collections
 import base64
 from vega_datasets import data
 import awesome_streamlit as ast
-import home
-import interface
+#import home
+#import interface
 #import src.style
 #st.set_page_config(layout="wide")
 #st.set_page_config(layout="wide")
-ast.core.services.other.set_logging_format()
+#ast.core.services.other.set_logging_format()
 
-PAGES = {
-    "Home": home,
-    "Main Interface": interface,
+#PAGES = {
+#    "Home": home,
+#    "Main Interface": interface,
     #"Interface": src.resources,
 
 }
 def main():
     """Main function of the App"""
     st.sidebar.title("Navigation")
-    selection = st.sidebar.radio("Go to", list(PAGES.keys()))
+    #selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
-    page = PAGES[selection]
+    #page = PAGES[selection]
     
-    with st.spinner(f"Loading {selection} ..."):
-        ast.shared.components.write_page(page)
+    #with st.spinner(f"Loading {selection} ..."):
+    #    ast.shared.components.write_page(page)
     
    
     st.sidebar.title("About")
