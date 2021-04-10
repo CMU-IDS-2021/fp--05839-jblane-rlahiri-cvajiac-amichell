@@ -49,16 +49,7 @@ source = data.movies.url
 
 st.title("⭐Towards a Better Spark UI⭐")
 st.text("An Interactive Visualization")
-page_bg_img = '''
-<style>
-body {
-background-image: url("https://spark.apache.org/images/spark-logo-back.png");
-background-size: cover;
-}
-</style>
-'''
 
-st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 
@@ -108,7 +99,7 @@ st.markdown("""
 
 
 st.sidebar.markdown("## Select Optimization")
-set_png_as_page_bg('apache-spark1.jpg')
+#set_png_as_page_bg('apache-spark1.jpg')
 
 #st.sidebar.markdown('#### Q-tranform plot')
 #vmax = st.sidebar.slider('Colorbar Max Energy', 10, 500, 25)  # min, max, default
@@ -116,26 +107,26 @@ set_png_as_page_bg('apache-spark1.jpg')
 #qrange = (int(qcenter*0.8), int(qcenter*1.2))
 
 
-@st.cache(allow_output_mutation=True)
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-def set_png_as_page_bg(png_file):
-    bin_str = get_base64_of_bin_file(png_file)
-    page_bg_img = '''
-    <style>
-    body {
-    background-image: url("data:image/jpg;base64,%s");
-    background-size: cover;
-    opacity: 1;
-    }
-    </style>
-    ''' % bin_str
+#@st.cache(allow_output_mutation=True)
+#def get_base64_of_bin_file(bin_file):
+#    with open(bin_file, 'rb') as f:
+#        data = f.read()
+#    return base64.b64encode(data).decode()
+#def set_png_as_page_bg(png_file):
+#    bin_str = get_base64_of_bin_file(png_file)
+#    page_bg_img = '''
+#    <style>
+#    body {
+#    background-image: url("data:image/jpg;base64,%s");
+#    background-size: cover;
+#    opacity: 1;
+#    }
+#    </style>
+#    ''' % bin_str
     
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-    return
-set_png_as_page_bg('apache-spark1.jpg')
+#    st.markdown(page_bg_img, unsafe_allow_html=True)
+#    return
+#set_png_as_page_bg('apache-spark1.jpg')
 task = st.selectbox(
         "Which problem do you want to Visualize?", ["Word Count","Spark for ML","Apply Optimizations to an Extract, Transform, Load (ETL) job"])
 plot=alt.Chart(source).mark_bar().encode(
