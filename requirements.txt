@@ -1,4 +1,4 @@
 vega_datasets
 collections
 base64
-awesome_streamlit
+awesome-streamlit
