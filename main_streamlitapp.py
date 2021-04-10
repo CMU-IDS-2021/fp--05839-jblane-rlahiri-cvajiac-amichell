@@ -15,8 +15,8 @@ import collections
 import base64
 from vega_datasets import data
 #import awesome_streamlit as ast
-#import home
-#import interface
+import home
+import interface
 #import src.style
 #st.set_page_config(layout="wide")
 #st.set_page_config(layout="wide")
