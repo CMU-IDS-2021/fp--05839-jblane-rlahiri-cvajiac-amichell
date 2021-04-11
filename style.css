@@ -3,7 +3,7 @@ body {
     background-color: #4F8BF9;
 }
 .stApp {
-  background-image: url("apache-spark1.jpg")
+  background: url("apache-spark1.jpg")
 
 }
 .stButton>button {
