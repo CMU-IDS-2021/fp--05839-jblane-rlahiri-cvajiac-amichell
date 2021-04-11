@@ -252,8 +252,37 @@ class interface:
 
 
 
+def main():
+    """Main function of the App"""
+    st.sidebar.title("Navigation")
+    #selection = st.sidebar.radio("Go to", list(PAGES.keys()))
+    nav_button=st.sidebar.radio("Go to",("Home","Main Interface"))
 
-source = data.movies.url
+    if nav_button=="Home":
+        home1().write()
+        
+    if nav_button=="Main Interface":
+        interface().write()
+    #interface=st.sidebar.radio()
+    #page = PAGES[selection]
+    #st.write("hello")
+    #with st.spinner(f"Loading {selection} ..."):
+    #    ast.shared.components.write_page(page)
+    #    #st.write(page)
+   
+    st.sidebar.title("About")
+    st.sidebar.info(
+        """
+        This app is maintained by  Janice Blane, mailto:jblane@andrew.cmu.edu
+        Riddhiman Lahiri, (mailto:rlahiri@andrew.cmu.edu)
+        André Michell, (mailto:amichell@andrew.cmu.edu)
+        Catalina Vajiac, (mailto:cvajiac@andrew.cmu.edu)
+        """
+    )
+
+if __name__ == "__main__":
+    main()
+#source = data.movies.url
 #st.set_page_config(layout="wide")
 #def local_css(file_name):
 #    with open(file_name) as f:
@@ -261,8 +290,8 @@ source = data.movies.url
 
 #local_css("style.css")
 
-st.title("⭐Towards a Better Spark UI⭐")
-st.text("An Interactive Visualization")
+#st.title("⭐Towards a Better Spark UI⭐")
+#st.text("An Interactive Visualization")
 
 
 
@@ -306,13 +335,13 @@ st.text("An Interactive Visualization")
 
 
 
-st.markdown("""
- * Use the menu at left to select data and set plot parameters
- * Your plots will appear below
-""")
+#st.markdown("""
+# * Use the menu at left to select data and set plot parameters
+# * Your plots will appear below
+#""")
 
 
-st.sidebar.markdown("## Select Optimization")
+#st.sidebar.markdown("## Select Optimization")
 #set_png_as_page_bg('apache-spark1.jpg')
 
 #st.sidebar.markdown('#### Q-tranform plot')
@@ -341,45 +370,45 @@ st.sidebar.markdown("## Select Optimization")
 #    st.markdown(page_bg_img, unsafe_allow_html=True)
 #    return
 #set_png_as_page_bg('apache-spark1.jpg')
-task = st.selectbox(
-        "Which problem do you want to Visualize?", ["Word Count","Spark for ML","Apply Optimizations to an Extract, Transform, Load (ETL) job"])
-plot=alt.Chart(source).mark_bar().encode(
-    alt.X("IMDB_Rating:Q"),
-    y='count()',
+#task = st.selectbox(
+#        "Which problem do you want to Visualize?", ["Word Count","Spark for ML","Apply Optimizations to an Extract, Transform, Load (ETL) job"])
+#plot=alt.Chart(source).mark_bar().encode(
+#    alt.X("IMDB_Rating:Q"),
+#    y='count()',
     
-).properties(width=400,
-    height=200)
-data_spill_button=st.sidebar.radio("Show data spill to memory and disk",("Yes","No"))
+#).properties(width=400,
+#    height=200)
+#data_spill_button=st.sidebar.radio("Show data spill to memory and disk",("Yes","No"))
 
-suffle_read_button=st.sidebar.radio("Show shuffle read and write quantities",("Yes","No"))
+#suffle_read_button=st.sidebar.radio("Show shuffle read and write quantities",("Yes","No"))
 
-Dataio_button=st.sidebar.radio("Show data input and output",("Yes","No"))
+#Dataio_button=st.sidebar.radio("Show data input and output",("Yes","No"))
 
-if st.checkbox("Optimization 1"):
+#if st.checkbox("Optimization 1"):
+#    #TODO
+#    st.write("Implement Optimization 1 on Data Set")
+    
+#if st.checkbox("Optimization 2"):
     #TODO
-    st.write("Implement Optimization 1 on Data Set")
-    
-if st.checkbox("Optimization 2"):
-    #TODO
-    st.write("Implement Optimization 2 on Data Set")
+#    st.write("Implement Optimization 2 on Data Set")
     
     
-if st.checkbox("Optimization 3"):
-    #TODO 
-    st.write("Implement Optimization 3 on Data Set")
-col1, col2, col3 = st.beta_columns(3)
-if data_spill_button=="Yes":
-    col1.header("Data Spill to Memory and Disk")
-    col1.write(plot)
-    #row2_1, row2_2, row2_3 = st.beta_columns((2,1,1))
+#if st.checkbox("Optimization 3"):
+#    #TODO 
+#    st.write("Implement Optimization 3 on Data Set")
+#col1, col2, col3 = st.beta_columns(3)
+#if data_spill_button=="Yes":
+#    col1.header("Data Spill to Memory and Disk")
+#    col1.write(plot)
+#    #row2_1, row2_2, row2_3 = st.beta_columns((2,1,1))
 
-if suffle_read_button=="Yes":
-    col2.header("Shuffle Read and Write")
-    col2.write(plot)
-if Dataio_button=="Yes":
-    col3.header("Data input and output")
-    col3.write(plot)
-st.write("** Display Data after Optimizations**")
-optimized=st.radio("",("Yes","No"))
-if optimized=="Yes":
-    st.write(plot.properties(width=600,height=300))
+#if suffle_read_button=="Yes":
+#    col2.header("Shuffle Read and Write")
+#    col2.write(plot)
+#if Dataio_button=="Yes":
+#    col3.header("Data input and output")
+#    col3.write(plot)
+#st.write("** Display Data after Optimizations**")
+#optimized=st.radio("",("Yes","No"))
+#if optimized=="Yes":
+#    st.write(plot.properties(width=600,height=300))
