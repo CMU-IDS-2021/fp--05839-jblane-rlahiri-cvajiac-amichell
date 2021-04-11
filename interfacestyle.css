@@ -1,4 +1,8 @@
-.stApp{
+body {
   background: url(apache-spark1.jpg)!imporant;
+}
+.stApp{
+  background: rgb(186,161,231)!important;
+  background: linear-gradient(blue,white)!important;
 
 }
