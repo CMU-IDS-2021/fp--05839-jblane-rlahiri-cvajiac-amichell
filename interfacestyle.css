@@ -1,4 +1,5 @@
 .stApp{
+  background: url(apache-spark1.jpg)!imporant;
   background: rgb(186,161,231)!important;
   background: linear-gradient(rgba(186,161,231,1) 30%, rgba(225,199,227,1) 60%, rgba(255,255,255,1) 100%)!important;
 }
