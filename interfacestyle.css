@@ -3,6 +3,6 @@ body {
 }
 .stApp{
   background: rgb(186,161,231)!important;
-  background: linear-gradient(#03fcdb,white)!important;
+  background: linear-gradient(#03fcdb 50%,white)!important;
 
 }
