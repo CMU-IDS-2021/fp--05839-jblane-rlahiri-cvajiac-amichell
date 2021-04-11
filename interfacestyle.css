@@ -1,5 +1,5 @@
 .stApp{
   
- 
+  background: rgb(186,161,231)
   background: radial-gradient(180deg, rgba(186,161,231,1) 0%, rgba(225,199,227,1) 20%, rgba(255,255,255,1) 100%);
 }
