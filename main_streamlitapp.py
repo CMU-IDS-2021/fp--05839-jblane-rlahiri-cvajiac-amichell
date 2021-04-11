@@ -196,7 +196,7 @@ class interface:
     
     def write(self):
 	with open('./interfacestyle.css') as f:
-    		st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+		st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
         source = data.movies.url
 	    #st.set_page_config(layout="wide")
         st.title("A Better Spark User Interface")
