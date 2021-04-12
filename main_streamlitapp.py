@@ -96,9 +96,9 @@ class home1:
     	    <body>
 
     	    <div class="container">
-            <p style="text-align:center">
+            <center>
       	    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
-            </p>
+            </center>
     	    </div>
             <p style="font-size:18px;font-family:verdana">Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
             engine for big data processing. It includes support for SQL queries, streaming 
