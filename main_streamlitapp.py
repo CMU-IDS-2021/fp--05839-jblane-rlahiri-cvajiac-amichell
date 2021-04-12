@@ -225,7 +225,7 @@ class home1:
     	    </body>
     	    </html>
     	    """,
-    	    height=500
+    	    height=600
     	    )
 	    st.markdown("""This UI displays some information, such as the job duration, stages, and a progress bar.
                 However, all the information is displayed in tabular format and we don’t see a lot of other useful information,
