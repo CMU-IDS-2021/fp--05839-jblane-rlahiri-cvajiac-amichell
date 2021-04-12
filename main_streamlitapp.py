@@ -69,7 +69,7 @@ class home1:
     	    	st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
-	    st.title("⭐A Better Spark Interface⭐")
+	    st.title("⭐A Better Spark User Interface⭐")
 	    st.markdown("---")
 	    st.markdown("***First, WHAT IS APACHE SPARK?!***" )
 	    components.html(
