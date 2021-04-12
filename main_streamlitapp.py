@@ -98,12 +98,12 @@ class home1:
     	    <div class="container">
       	    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
     	    </div>
-Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
+<p style="font-size:18px;font-family:verdana">Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
             engine for big data processing. It includes support for SQL queries, streaming 
             data, machine learning, and graph processing. Spark runs on Hadoop, Apache Mesos, 
             Kubernetes, standalone, or in the cloud. Internet companies such as 
             Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
-            processing multiple petabytes of data on clusters of over 8,000 nodes.
+            processing multiple petabytes of data on clusters of over 8,000 nodes.</p>
     	    
             </body>
 
