@@ -109,7 +109,7 @@ Originated at UC Berkeley in 2009, Apache Spark is a unified analytics
 
     	    </html>
     	    """,
-    	    width=800
+    	    height=500
     	    )
 
 	    st.markdown("---")
