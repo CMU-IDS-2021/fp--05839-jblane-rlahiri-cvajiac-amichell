@@ -145,7 +145,7 @@ class home1:
       	    width: 200%;
       	    opacity: 0;
       	    transition: .5s ease;
-      	    background-color: #C88F0A;
+      	    background-color: lightblue;
     	    }
     
     	    .container:hover .overlay {
