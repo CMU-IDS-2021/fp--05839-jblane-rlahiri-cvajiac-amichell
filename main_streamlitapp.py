@@ -105,7 +105,7 @@ class home1:
                 Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
                 processing multiple petabytes of data on clusters of over 8,000 nodes.</p>
     	    </body>
-    	    </body>
+
     	    </html>
     	    """,
     	    width=800
