@@ -217,7 +217,11 @@ class home1:
             <div class="text">Some useful stuff, but how to make sense of it?!</div>
       	    </div>
     	    </div>
-    
+            <p>This UI displays some information, such as the job duration, stages, and a progress bar.
+                However, all the information is displayed in tabular format and we don’t see a lot of other useful information,
+                such as memory usage or shuffle read/writes. While this information is available, it is not presented with
+                effective visual encodings that identify clearly the implication of different characteristics of Spark jobs.
+                Furthermore, once the end user has hundreds or thousands of jobs, these tables become impossible to parse.</p>
     	    </body>
     	    </html>
     	    """,
