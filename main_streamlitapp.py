@@ -94,8 +94,6 @@ class home1:
     	    </head>
     	    <body>
     
-    	    <!--<h2>Current Results View</h2>-->
-    	    <!--<p>Hover over the image to see the effect.</p>-->
     
     	    <div class="container">
       	    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
