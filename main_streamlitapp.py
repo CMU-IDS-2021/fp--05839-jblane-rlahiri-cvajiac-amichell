@@ -115,43 +115,43 @@ class home1:
 
 	    st.markdown("---")
 	    st.markdown("***How Does it Work?***" )
-	    """
-        components.html(
-    	    """
+	    
+        # components.html(
+    	   #  """
           
-    	    <!DOCTYPE html>
-    	    <html>
-    	    <head>
-    	    <meta name="viewport" content="width=device-width, initial-scale=1">
-    	    <style>
-    	    .container {
-     	    position: relative;
-      	    width: 30%;
-    	    }
+    	   #  <!DOCTYPE html>
+    	   #  <html>
+    	   #  <head>
+    	   #  <meta name="viewport" content="width=device-width, initial-scale=1">
+    	   #  <style>
+    	   #  .container {
+     	  #   position: relative;
+      	 #    width: 30%;
+    	   #  }
     
-    	    .image {
-      	    display: block;
-      	    width: 100%;
-      	    height: auto;
-    	    }
-    	    </style>
-    	    </head>
-    	    <body>
+    	   #  .image {
+      	 #    display: block;
+      	 #    width: 100%;
+      	 #    height: auto;
+    	   #  }
+    	   #  </style>
+    	   #  </head>
+    	   #  <body>
     
-    	    <!--<h2>Current Results View</h2>-->
-    	    <!--<p>Hover over the image to see the effect.</p>-->
+    	   #  <!--<h2>Current Results View</h2>-->
+    	   #  <!--<p>Hover over the image to see the effect.</p>-->
 
-    	    <div class="container">
-      	    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
-    	    </div>
+    	   #  <div class="container">
+      	 #    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
+    	   #  </div>
 
-    	    </body>
-    	    </html>
-    	    """,
-    	    height=200
+    	   #  </body>
+    	   #  </html>
+    	   #  """,
+    	   #  height=200
             
-    	    )
-        """
+    	   #  )
+        
 	    st.markdown("""Magic. Lots of it.""")
 
 
