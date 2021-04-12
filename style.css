@@ -2,12 +2,12 @@
 
 body {
     color: #fff;
-    background: rgb(186,161,231)!important;
     background: linear-gradient(#C88F0A,white)!important;
-    /*background-color: #4F8BF9;*/
+    /*background-color: #C88F0A;*/
 }
 .stApp {
-  background: url("apache-spark1.jpg")
+  /*background: url("apache-spark1.jpg")*/
+  background: linear-gradient(#C88F0A,white)!important;
   
 }
 .stButton>button {
