@@ -70,7 +70,7 @@ class home1:
 
 
 	    st.title("⭐A Better Spart Interface⭐")
-	    st.text("Why Do We Need a Better Spark UI?")#
+	    st.text("_Why Do We Need a Better Spark UI?_")#
 	    st.markdown("---")
 	    st.markdown("_**First, WHAT IS SPARK?!**_" )
 	    components.html(
