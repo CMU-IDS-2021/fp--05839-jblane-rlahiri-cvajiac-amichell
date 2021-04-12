@@ -69,8 +69,8 @@ class home1:
     	    	st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
-	    st.title("⭐Why Do We Need a Better Spark UI?⭐")
-	    #st.text("An Interactive Visualization")#
+	    st.title("⭐A Better Spart Interface⭐")
+	    st.text("Why Do We Need a Better Spark UI?")#
 	    st.markdown("---")
 	    st.markdown("_**First, WHAT IS SPARK?!**_" )
 	    components.html(
