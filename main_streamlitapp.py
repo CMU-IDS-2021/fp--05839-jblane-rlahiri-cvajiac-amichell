@@ -102,7 +102,7 @@ class home1:
     	    </body>
     	    </html>
     	    """,
-    	    height=200
+    	    width=500
     	    )
 	    st.markdown("""Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
                 engine for big data processing. It includes support for SQL queries, streaming 
@@ -221,7 +221,7 @@ class home1:
     	    </body>
     	    </html>
     	    """,
-    	    height=300
+    	    height=800
     	    )
 	    st.markdown("""This UI displays some information, such as the job duration, stages, and a progress bar.
                 However, all the information is displayed in tabular format and we don’t see a lot of other useful information,
