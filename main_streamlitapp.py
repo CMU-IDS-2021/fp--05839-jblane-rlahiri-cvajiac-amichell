@@ -80,7 +80,7 @@ class home1:
     	    <meta name="viewport" content="width=device-width, initial-scale=1">
     	    <style>
     	    .container {
-     	    position: relative;
+     	    position: center;
       	    width: 30%;
     	    }
     
@@ -95,9 +95,9 @@ class home1:
     	    <body>
 
     	    <div class="container">
-            <center>
+
       	    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
-            </center>
+
     	    </div>
             <p style="font-size:18px;font-family:verdana">Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
             engine for big data processing. It includes support for SQL queries, streaming 
@@ -106,11 +106,17 @@ class home1:
             Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
             processing multiple petabytes of data on clusters of over 8,000 nodes.</p>
     	    
+            <div class="container">
+
+      	    <img src="https://databricks.com/wp-content/uploads/2019/02/largest-open-source-apache-spark.png" alt="Current Spark Results" class="image" >
+
+    	    </div>
+            
             </body>
 
     	    </html>
     	    """,
-    	    height=300
+    	    height=800
     	    )
 
 	    st.markdown("---")
