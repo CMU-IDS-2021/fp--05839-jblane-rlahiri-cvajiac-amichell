@@ -113,9 +113,48 @@ class home1:
                 Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
                 processing multiple petabytes of data on clusters of over 8,000 nodes.""")
 
+	    st.markdown("---")
+	    st.markdown("***How Does it Work?***" )
+	    components.html(
+    	    """
+    	    <!DOCTYPE html>
+    	    <html>
+    	    <head>
+    	    <meta name="viewport" content="width=device-width, initial-scale=1">
+    	    <style>
+    	    .container {
+     	    position: relative;
+      	    width: 30%;
+    	    }
+    
+    	    .image {
+      	    display: block;
+      	    width: 100%;
+      	    height: auto;
+    	    }
+    	    </style>
+    	    </head>
+    	    <body>
+    
+    	    <!--<h2>Current Results View</h2>-->
+    	    <!--<p>Hover over the image to see the effect.</p>-->
+    
+    	    <div class="container">
+      	    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
+    	    </div>
+    
+    	    </body>
+    	    </html>
+    	    """,
+    	    height=200
+    	    )
+	    st.markdown("""Magic. Lots of it.""")
+
+
+
 
 	    st.markdown("---")
-	    st.markdown("_**So What's the Problem?**_" )
+	    st.markdown("***So What's the Problem?***" )
 	    st.markdown("_Here's what Spark results look like now:_" )
 	    components.html(
     	    """
