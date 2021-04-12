@@ -98,7 +98,13 @@ class home1:
     	    <div class="container">
       	    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
     	    </div>
-;;aljskdf
+            
+                        <p style="font-size:18px;font-family:verdana">This UI displays some information, such as the job duration, stages, and a progress bar.
+                However, all the information is displayed in tabular format and we don’t see a lot of other useful information,
+                such as memory usage or shuffle read/writes. While this information is available, it is not presented with
+                effective visual encodings that identify clearly the implication of different characteristics of Spark jobs.
+                Furthermore, once the end user has hundreds or thousands of jobs, these tables become impossible to parse.</p>
+                
             <p style="font-size:18px;font-family:verdana">Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
             engine for big data processing. It includes support for SQL queries, streaming 
             data, machine learning, and graph processing. Spark runs on Hadoop, Apache Mesos, 
