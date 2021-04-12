@@ -115,8 +115,10 @@ class home1:
 
 	    st.markdown("---")
 	    st.markdown("***How Does it Work?***" )
-	    components.html(
+	    """
+        components.html(
     	    """
+          
     	    <!DOCTYPE html>
     	    <html>
     	    <head>
@@ -138,16 +140,18 @@ class home1:
     
     	    <!--<h2>Current Results View</h2>-->
     	    <!--<p>Hover over the image to see the effect.</p>-->
-            <!--
+
     	    <div class="container">
       	    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
     	    </div>
-            -->
+
     	    </body>
     	    </html>
     	    """,
     	    height=200
+            
     	    )
+        """
 	    st.markdown("""Magic. Lots of it.""")
 
 
