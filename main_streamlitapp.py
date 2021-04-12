@@ -99,7 +99,7 @@ class home1:
       	    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
     	    </div>
             
-                        <p style="font-size:18px;font-family:verdana">This UI displays some information, such as the job duration, stages, and a progress bar.
+                        <p>This UI displays some information, such as the job duration, stages, and a progress bar.
                 However, all the information is displayed in tabular format and we don’t see a lot of other useful information,
                 such as memory usage or shuffle read/writes. While this information is available, it is not presented with
                 effective visual encodings that identify clearly the implication of different characteristics of Spark jobs.
