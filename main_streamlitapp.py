@@ -320,7 +320,8 @@ def main():
     st.sidebar.title("About")
     st.sidebar.info(
         """
-        This app is maintained by  Janice Blane, mailto:jblane@andrew.cmu.edu \n
+        This app is maintained by\n
+        Janice Blane, mailto:jblane@andrew.cmu.edu \n
         Riddhiman Lahiri, (mailto:rlahiri@andrew.cmu.edu) \n
         André Michell, (mailto:amichell@andrew.cmu.edu) \n
         Catalina Vajiac, (mailto:cvajiac@andrew.cmu.edu)
