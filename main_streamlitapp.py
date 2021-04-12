@@ -102,7 +102,7 @@ class home1:
     	    </body>
     	    </html>
     	    """,
-    	    width=500
+    	    width=800
     	    )
 	    st.markdown("""Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
                 engine for big data processing. It includes support for SQL queries, streaming 
