@@ -86,8 +86,6 @@ class home1:
     
     	    .image {
       	    display: block;
-      	    width: 200%;
-      	    height: auto;
     	    }
     	    </style>
     	    </head>
@@ -108,7 +106,7 @@ class home1:
     	    
             <div class="container">
 
-      	    <img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" >
+      	    <img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" height = 200>
 
     	    </div>
             
