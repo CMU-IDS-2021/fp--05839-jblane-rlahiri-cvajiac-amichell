@@ -246,7 +246,7 @@ class interface:
 		
         source = data.movies.url
 	    #st.set_page_config(layout="wide")
-        st.title("A Better Spark User Interface")
+        st.title("⭐A Better Spark User Interface⭐")
         st.markdown("""
  	    * Use the menu at left to select data and set plot parameters
  	    * Your plots will appear below
