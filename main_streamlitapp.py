@@ -45,7 +45,7 @@ class home1:
 
 
     def write(self):
-	    page_bg_img = '''
+        page_bg_img = '''
 	    <style>
 	    body 	{
     		    color: #fff;
@@ -64,15 +64,14 @@ class home1:
 		    }
 	    </style>
 	    '''
-	    st.markdown(page_bg_img, unsafe_allow_html=True)
-	    with open('./style.css') as f:
+        st.markdown(page_bg_img, unsafe_allow_html=True)
+        with open('./style.css') as f:
     	    	st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-
-	    st.title("⭐A Better Spark User Interface⭐")
-	    st.markdown("---")
-	    st.markdown("***First, WHAT IS APACHE SPARK?!***" )
-	    components.html(
+        st.title("⭐A Better Spark User Interface⭐")
+        st.markdown("---")
+        st.markdown("***First, WHAT IS APACHE SPARK?!***" )
+        components.html(
     	    """
     	    <!DOCTYPE html>
     	    <html>
@@ -116,61 +115,59 @@ class home1:
     	    """,
     	    height=700
     	    )
-
-	    st.markdown("---")
-	    st.markdown("***How Does it Work?***" )
-	    
-        # components.html(
-    	   #  """
-          
-    	   #  <!DOCTYPE html>
-    	   #  <html>
-    	   #  <head>
-    	   #  <meta name="viewport" content="width=device-width, initial-scale=1">
-    	   #  <style>
-    	   #  .container {
-     	  #   position: relative;
-      	 #    width: 30%;
-    	   #  }
-    
-    	   #  .image {
-      	 #    display: block;
-      	 #    width: 100%;
-      	 #    height: auto;
-    	   #  }
-    	   #  </style>
-    	   #  </head>
-    	   #  <body>
-    
-    	   #  <!--<h2>Current Results View</h2>-->
-    	   #  <!--<p>Hover over the image to see the effect.</p>-->
-
-    	   #  <div class="container">
-      	 #    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
-    	   #  </div>
-
-    	   #  </body>
-    	   #  </html>
-    	   #  """,
-    	   #  height=200
-            
-    	   #  )
         
-	    st.markdown("""Spark is capable of running different types of jobs. In this interface, we focus specifically on three specific types:""")
+        st.markdown("---")
+        st.markdown("***How Does it Work?***" )
+        	    
+        # components.html(
+        	   #  """
+          
+        	   #  <!DOCTYPE html>
+        	   #  <html>
+        	   #  <head>
+        	   #  <meta name="viewport" content="width=device-width, initial-scale=1">
+        	   #  <style>
+        	   #  .container {
+         	  #   position: relative;
+          	 #    width: 30%;
+        	   #  }
+        
+        	   #  .image {
+          	 #    display: block;
+          	 #    width: 100%;
+          	 #    height: auto;
+        	   #  }
+        	   #  </style>
+        	   #  </head>
+        	   #  <body>
+        
+        	   #  <!--<h2>Current Results View</h2>-->
+        	   #  <!--<p>Hover over the image to see the effect.</p>-->
+        
+        	   #  <div class="container">
+          	 #    <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
+        	   #  </div>
+        
+        	   #  </body>
+        	   #  </html>
+        	   #  """,
+        	   #  height=200
+            
+        	   #  )
+        
+        st.markdown("""Spark is capable of running different types of jobs. In this interface, we focus specifically on three specific types:""")
         st.markdown("""**Word Count:** One simple implementation for Spark, is to count the number of words in a document or set of documents.""")
         st.markdown("""**Spark for Machine Learning:** Spark can also be a used for a ML job under many different optimizations for ML Training.""")
-        st.markdown("""**Extract, Transform, Load (ETL) job:** This application would read in some very large dataset from the web, perform some 
-                    transformations to prepare it for efficient queries, and store the data in some intermediate output format to prepare it for 
-                    loading into a database.""")
+        st.markdown("""**Extract, Transform, Load (ETL) job:** This application would read in some very large dataset from the web, perform some transformations to prepare it for efficient queries, and store the data in some intermediate output format to prepare it for loading into a database.""")
         st.markdown("")
         st.text("""*Note:*This interface will be performed using a premade static dataset of Spark job data.""" )
-        
+                
 
 
-	    st.markdown("---")
-	    st.markdown("***So What's the Problem?***" )
-	    st.markdown("_Here's what Spark results look like now:_" )
-	    components.html(
+        st.markdown("---")
+        st.markdown("***So What's the Problem?***" )
+        st.markdown("_Here's what Spark results look like now:_" )
+        components.html(
     	    """
     	    <!DOCTYPE html>
     	    <html>
@@ -239,8 +236,8 @@ class home1:
     	    </body>
     	    </html>
     	    """,
-    	    height=800
-    	    )
+            height=800
+            )
 
 
 
