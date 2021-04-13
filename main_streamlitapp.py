@@ -86,7 +86,7 @@ class home1:
     
     	    .image {
       	    display: block;
-      	    width: 100%;
+      	    width: 200%;
       	    height: auto;
     	    }
     	    </style>
