@@ -156,7 +156,7 @@ class home1:
         	   #  )
         
         st.markdown("""Spark is capable of running different types of jobs. In this interface, we focus specifically on three specific types:""")
-        st.markdown("""**Word Count:** One simple implementation for Spark, is to count the number of words in a document or set of documents.""")
+        st.markdown("""**Word Count:** One simple implementation for Spark is to count the number of words in a document or set of documents.""")
         st.markdown("""**Spark for Machine Learning:** Spark can also be a used for a ML job under many different optimizations for ML Training.""")
         st.markdown("""**Extract, Transform, Load (ETL) job:** This application would read in some very large dataset from the web, perform some transformations to prepare it for efficient queries, and store the data in some intermediate output format to prepare it for loading into a database.""")
         st.markdown("")
