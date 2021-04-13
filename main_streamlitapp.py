@@ -116,7 +116,7 @@ class home1:
 
     	    </html>
     	    """,
-    	    height=500
+    	    height=700
     	    )
 
 	    st.markdown("---")
