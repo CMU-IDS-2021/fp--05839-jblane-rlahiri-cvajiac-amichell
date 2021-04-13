@@ -160,7 +160,7 @@ class home1:
         st.markdown("""**Spark for Machine Learning:** Spark can also be a used for a ML job under many different optimizations for ML Training.""")
         st.markdown("""**Extract, Transform, Load (ETL) job:** This application would read in some very large dataset from the web, perform some transformations to prepare it for efficient queries, and store the data in some intermediate output format to prepare it for loading into a database.""")
         st.markdown("")
-        st.text("""*Note:This interface will be performed using a premade static dataset of Spark job data.""" )
+        st.text("""*Note: For simplicity, this interface will be performed using a premade static dataset of Spark job data.""" )
                 
 
 
