@@ -14,7 +14,7 @@ from datetime import date
 import collections
 import base64
 from vega_datasets import data
-
+import nx_altair
 import draw, utils
 #import awesome_streamlit as ast
 #import home
