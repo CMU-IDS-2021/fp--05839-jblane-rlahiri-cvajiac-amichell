@@ -7,4 +7,3 @@ pandas
 pydot
 streamlit
 vega_datasets
-pydot
