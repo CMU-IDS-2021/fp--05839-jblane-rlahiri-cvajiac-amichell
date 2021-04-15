@@ -1,4 +1,5 @@
 vega_datasets
-collections
-base64
+streamlit
+pandas
 awesome-streamlit
+altair
