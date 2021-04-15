@@ -120,42 +120,7 @@ class home1:
 		
 		st.markdown("---")
 		st.markdown("***How Does it Work?***" )
-				
-		# components.html(
-				#  """
-		  
-				#  <!DOCTYPE html>
-				#  <html>
-				#  <head>
-				#  <meta name="viewport" content="width=device-width, initial-scale=1">
-				#  <style>
-				#  .container {
-		 	  #	position: relative;
-		  	 #	width: 30%;
-				#  }
-		
-				#  .image {
-		  	 #	display: block;
-		  	 #	width: 100%;
-		  	 #	height: auto;
-				#  }
-				#  </style>
-				#  </head>
-				#  <body>
-		
-				#  <!--<h2>Current Results View</h2>-->
-				#  <!--<p>Hover over the image to see the effect.</p>-->
-		
-				#  <div class="container">
-		  	 #	<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
-				#  </div>
-		
-				#  </body>
-				#  </html>
-				#  """,
-				#  height=200
-			
-				#  )
+
 		
 		st.markdown("""Spark is capable of running different types of jobs. In this interface, we focus specifically on three specific types:""")
 		st.markdown("""**Word Count:** One simple implementation for Spark is to count the number of words in a document or set of documents.""")
