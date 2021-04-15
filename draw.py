@@ -34,7 +34,7 @@ def job_times(url: str) -> alt.Chart:
     ''' produce histogram displaying counts of a particular field
 
         :param url: online url or path to data
-        :return altair histogram of counts '''
+        :return altair chart showing times, split by job id'''
     return alt.Chart(url).transform_calculate(
         time="replace(toString(datum['Submission Time']) + toString(datum['Completion Time']), 'null', '')"
     ).mark_area().encode(
@@ -53,6 +53,10 @@ def job_times(url: str) -> alt.Chart:
 
 
 def job_dag(graph: nx.Graph) -> alt.Chart:
+    ''' draw task graph in altair
+
+        :param graph: task graph
+        :return altair chart of task graph'''
     pos = nx.drawing.nx_pydot.graphviz_layout(graph, prog='dot')
     flipped_pos = {node: (-y,x) for (node, (x,y)) in pos.items()}
     return nxa.draw_networkx(
