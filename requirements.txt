@@ -6,3 +6,4 @@ nx_altair
 pandas
 streamlit
 vega_datasets
+pydot
