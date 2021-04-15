@@ -216,7 +216,7 @@ class interface:
 			  st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 		
 		source = data.movies.url
-		url = utils.prep_data('./data/spark_ml_job.json')
+		url = utils.prep_data('data/spark_ml_job.json')
 		dag = utils.json_to_nx('')
 
 		#st.set_page_config(layout="wide")
@@ -236,9 +236,8 @@ class interface:
 		task = st.selectbox(
 				"Which problem do you want to Visualize?", ["Word Count","Spark for ML","Apply Optimizations to an Extract, Transform, Load (ETL) job"])
 		plot=alt.Chart(source).mark_bar().encode(
-			alt.X("IMDB_Rating:Q"),
+			alt.X("IMDB_Rating:Q", title='Time'),
 			y='count()',
-	
 		).properties(width=400,
 			height=200)
 		data_spill_button=st.sidebar.radio("Show data spill to memory and disk",("Yes","No"))
@@ -265,6 +264,8 @@ class interface:
 		if data_spill_button=="Yes":
 				col1.header("Data Spill to Memory and Disk")
 				col1.write(plot)
+				#col1.write(draw.count_histogram(url, 'Event:Q'))
+
 				#row2_1, row2_2, row2_3 = st.beta_columns((2,1,1))
 
 		if suffle_read_button=="Yes":
