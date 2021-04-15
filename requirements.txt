@@ -1,5 +1,6 @@
 altair
 awesome-streamlit
+graphviz
 networkx
 nx_altair
 pandas
