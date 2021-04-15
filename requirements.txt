@@ -1,5 +1,7 @@
-vega_datasets
-streamlit
-pandas
-awesome-streamlit
 altair
+awesome-streamlit
+networkx
+nx_altair
+pandas
+streamlit
+vega_datasets
