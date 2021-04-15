@@ -259,7 +259,7 @@ class interface:
 				st.write("Implement Optimization 3 on Data Set")
 	  
 		st.header('Task Graph')
-		st.write(draw.job_dag(dag))
+		#st.write(draw.job_dag(dag))
 		col1, col2, col3 = st.beta_columns(3)
 		if data_spill_button=="Yes":
 				col1.header("Data Spill to Memory and Disk")
