@@ -78,3 +78,57 @@ def job_dag(graph: nx.Graph, filename: str) -> alt.Chart:
         width=800,
         height=300
     )
+
+def data_spill(url: str) -> alt.Chart:
+    ''' draw data spill chart in altair
+
+        :param url: link to data
+        :return altair chart of data spill'''
+    return alt.Chart(url).mark_bar().transform_filter(
+        (alt.datum.Event == 'SparkListenerTaskEnd')
+    ).transform_calculate(
+        bytes="datum['Task Metrics']['Disk Bytes Spilled'] / 1000000"
+    ).encode(
+        x=alt.X('Task Info.Finish Time:T', axis=alt.Axis(title='Time')),
+        y=alt.Y('bytes:Q', axis=alt.Axis(title='MB spilled to mem & disk'))
+    )
+
+
+def shuffle_read_write(url: str) -> alt.Chart:
+    ''' draw shuffle read/write chart in altair
+
+        :param url: link to data
+        :return altair chart of shuffle reads/writes '''
+    # makes transform_calc string nicer
+    datum_s = lambda s1, s2: "datum['Task Metrics']['Shuffle {} Metrics']['{}']".format(s1, s2)
+
+    return alt.Chart(url).mark_bar().transform_filter(
+        (alt.datum.Event == 'SparkListenerTaskEnd')
+    ).transform_calculate(
+        bytes="({}+{}) / 1000000".format(datum_s('Read', 'Local Bytes Read'), datum_s('Write', 'Shuffle Bytes Written'))
+    ).encode(
+        x=alt.X('Task Info.Finish Time:T', axis=alt.Axis(title='Time')),
+        y=alt.Y('bytes:Q', axis=alt.Axis(title='Shuffle reads & writes (MB)'))
+    )
+
+
+def job_duration(url: str) -> alt.Chart:
+    ''' draw job duration faceted chart in altair
+
+        :param url: link to data
+        :return altair chart showing duration of each job '''
+    return alt.Chart(url).transform_calculate(
+        time="replace(toString(datum['Submission Time']) + toString(datum['Completion Time']), 'null', '')"
+    ).mark_area().encode(
+        x=alt.X('time:T'),
+        y=alt.Y('count()'),
+        row=alt.Row('Job ID:O'),
+        tooltip = ['time:T', 'count()']
+    ).properties(
+        width=600,
+        height=30
+    ).transform_filter(
+        (alt.datum.Event == 'SparkListenerJobStart') | (alt.datum.Event == 'SparkListenerJobEnd')
+    ).configure_facet(
+        spacing=0
+    )

@@ -260,28 +260,30 @@ class interface:
 				#TODO 
 				st.write("Implement Optimization 3 on Data Set")
 	  
-		col1, _, col2 = st.beta_columns([1, 0.1, 1])
+		st.header('Task Overview: What does the job look like?')
+		col1, _, col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1, 1, 0.1])
 		with col1:
-			st.header('Task Overview: What does the job look like?')
+			st.write('Task Graph: what are the job dependencies?')
 			st.altair_chart(draw.job_dag(dag, filename_strip), use_container_width=True)
 
 		with col2:
-			st.altair_chart(draw.count_histogram(url, 'Event:N'))
-			pass
+			st.write('Breakdown of events: What is Spark doing?')
+			st.altair_chart(draw.count_histogram(url, 'Event:N'), use_container_width=True)
+
+		with col3:
+			st.write('How long does each job take?')
+			st.altair_chart(draw.job_duration(url), use_container_width=True)
 		
 
 
-		col1, col2, col3 = st.beta_columns(3)
+		col1, _, col2, _, col3 = st.beta_columns([1, 0.1, 1, 0.1, 1])
 		if data_spill_button=="Yes":
-				col1.header("Data Spill to Memory and Disk")
-				col1.write(plot)
-				#col1.write(draw.count_histogram(url, 'Event:Q'))
-
-				#row2_1, row2_2, row2_3 = st.beta_columns((2,1,1))
+			col1.header("Data Spill to Memory and Disk")
+			col1.altair_chart(draw.data_spill(url), use_container_width=True)
 
 		if suffle_read_button=="Yes":
-				col2.header("Shuffle Read and Write")
-				col2.write(plot)
+			col2.header("Shuffle Read and Write")
+			col2.altair_chart(draw.shuffle_read_write(url), use_container_width=True)
 		if Dataio_button=="Yes":
 				col3.header("Data input and output")
 				col3.write(plot)
