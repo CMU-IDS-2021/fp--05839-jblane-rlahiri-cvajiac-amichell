@@ -1,6 +1,7 @@
 import json
 import networkx as nx
 import os, sys
+import pandas as pd
 import streamlit as st
 
 @st.cache(show_spinner=False)
@@ -11,13 +12,13 @@ def prep_data(filename: str) -> str:
         :return string path for cleansed data'''
 	with open(filename) as f:
 		data = [json.loads(line) for line in f]
-		data_json = json.dumps(data)
 
 	url = '{}-sanitized.json'.format(os.path.splitext(filename)[0])
 	with open(url, 'w') as f:
-		json.dump(data_json, f)
+		json.dump(data, f)
 
-	return url
+	base = 'https://raw.githubusercontent.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/main/data/{}-sanitized.json'
+	return base.format(extract_filename(filename))
 
 
 def json_to_nx(filename: str) -> nx.Graph:
@@ -27,3 +28,12 @@ def json_to_nx(filename: str) -> nx.Graph:
         :return networkx Graph object '''
 
     return nx.balanced_tree(2, 3)
+
+
+def extract_filename(filename: str) -> str:
+	''' remove path & extension from filename
+	
+		:param filename: path to file
+		:return filename w/o path and extension '''
+
+	return os.path.splitext(os.path.basename(filename))[0]

@@ -1,15 +1,18 @@
 import altair as alt
 import networkx as nx
 import nx_altair as nxa
+import os
+import pickle as pkl
 
-alt.data_transformers.enable('json')
+from pprint import pprint
 
-def count_histogram(url: str, field: str) -> alt.Chart:
+def count_histogram(url: list, field: str) -> alt.Chart:
     ''' produce histogram displaying counts of a particular field
 
         :param url: online url or path to data
         :param field: field to count (with type specified) 
         :return altair histogram of counts '''
+
     field_s = field.split(':')[0] # split type from field name
     bars = alt.Chart(url).mark_bar().encode(
         x=alt.X(field, axis=alt.Axis(labelAngle=-45)),
@@ -52,13 +55,22 @@ def job_times(url: str) -> alt.Chart:
     )
 
 
-def job_dag(graph: nx.Graph) -> alt.Chart:
+def job_dag(graph: nx.Graph, filename: str) -> alt.Chart:
     ''' draw task graph in altair
 
         :param graph: task graph
         :return altair chart of task graph'''
-    pos = nx.drawing.nx_pydot.graphviz_layout(graph, prog='dot')
+
+    pkl_filename = 'data/{}-pos.pkl'.format(filename)
+    if os.path.exists(pkl_filename):
+        with open(pkl_filename, 'rb') as f:
+            pos = pkl.load(f)
+    else:
+        pos = nx.drawing.nx_pydot.graphviz_layout(graph, prog='dot')
+        with open(pkl_filename, 'wb') as f:
+            pkl.dump(pos, f)
     flipped_pos = {node: (-y,x) for (node, (x,y)) in pos.items()}
+
     return nxa.draw_networkx(
         graph,
         pos=flipped_pos,

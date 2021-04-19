@@ -216,7 +216,9 @@ class interface:
 			  st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 		
 		source = data.movies.url
-		url = utils.prep_data('data/spark_ml_job.json')
+		filename = 'data/spark_ml_job.json'
+		filename_strip = utils.extract_filename(filename)
+		url = utils.prep_data(filename)
 		dag = utils.json_to_nx('')
 
 		#st.set_page_config(layout="wide")
@@ -258,8 +260,17 @@ class interface:
 				#TODO 
 				st.write("Implement Optimization 3 on Data Set")
 	  
-		st.header('Task Graph')
-		#st.write(draw.job_dag(dag))
+		col1, _, col2 = st.beta_columns([1, 0.1, 1])
+		with col1:
+			st.header('Task Overview: What does the job look like?')
+			st.altair_chart(draw.job_dag(dag, filename_strip), use_container_width=True)
+
+		with col2:
+			st.altair_chart(draw.count_histogram(url, 'Event:N'))
+			pass
+		
+
+
 		col1, col2, col3 = st.beta_columns(3)
 		if data_spill_button=="Yes":
 				col1.header("Data Spill to Memory and Disk")
