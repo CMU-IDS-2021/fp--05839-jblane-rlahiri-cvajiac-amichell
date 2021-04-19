@@ -4,8 +4,6 @@ import nx_altair as nxa
 import os
 import pickle as pkl
 
-from pprint import pprint
-
 def count_histogram(url: list, field: str) -> alt.Chart:
     ''' produce histogram displaying counts of a particular field
 
