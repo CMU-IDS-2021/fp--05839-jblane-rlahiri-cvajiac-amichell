@@ -97,7 +97,7 @@ class home1:
 			<body>
 
 			<div class="container">
-	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
+	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" style="width:100%">
 			</div>
             
 			<p style="font-size:18px;font-family:verdana">Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
@@ -108,7 +108,7 @@ class home1:
 			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>
 			
 			<div class="container">
-	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" height = 300>
+	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" style="width:100%">
 			</div>
 			
 			</body>
