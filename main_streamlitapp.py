@@ -97,7 +97,7 @@ class home1:
 			<body>
 
 			<div class="container">
-	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" style="height:100%">
+	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" style="width:100%">
 			</div>
             
 			<p style="font-size:18px;font-family:verdana">Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
