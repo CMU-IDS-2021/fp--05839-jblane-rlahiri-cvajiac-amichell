@@ -195,7 +195,7 @@ class home1:
             </div>
             </html>
             """,
-            height=700
+            height=800
             )
         
         st.markdown("""*Note: For simplicity, this interface will be performed using a premade static dataset of Spark job data.""" )
