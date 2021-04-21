@@ -82,8 +82,7 @@ class home1:
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<style>
 			.container {
-	 		position: center;
-	  		width: 100%;
+	 		position: relative;
 			}
 	
 			.image {
@@ -95,10 +94,9 @@ class home1:
 			<body>
 
 			<div class="container">
-
 	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" >
-
 			</div>
+            
 			<p style="font-size:18px;font-family:verdana">Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
 			engine for big data processing. It includes support for SQL queries, streaming 
 			data, machine learning, and graph processing. Spark runs on Hadoop, Apache Mesos, 
@@ -107,9 +105,7 @@ class home1:
 			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>
 			
 			<div class="container">
-
 	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" height = 300>
-
 			</div>
 			
 			</body>
