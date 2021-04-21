@@ -33,7 +33,7 @@ st.set_page_config(layout="wide")
 
 
 class home1:
-	from datetime import date
+    from datetime import date
 
 #def local_css(file_name):
 #	with open(file_name) as f:
@@ -46,8 +46,8 @@ class home1:
 #logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 
-	def write(self):
-		page_bg_img = '''
+    def write(self):
+        page_bg_img = '''
 		<style>
 		body 	{
 				color: #fff;
@@ -66,14 +66,17 @@ class home1:
 			}
 		</style>
 		'''
-		st.markdown(page_bg_img, unsafe_allow_html=True)
-		with open('./style.css') as f:
-				st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        st.markdown(page_bg_img, unsafe_allow_html=True)
+        with open('./style.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+            
+        with open('./carousel.css') as f:
+            st.markdown(f'<script>{f.read()}</script>', unsafe_allow_html=True)
 
-		st.title("⭐A Better Spark User Interface⭐")
-		st.markdown("---")
-		st.markdown("***First, WHAT IS APACHE SPARK?!***" )
-		components.html(
+        st.title("⭐A Better Spark User Interface⭐")
+        st.markdown("---")
+        st.markdown("***First, WHAT IS APACHE SPARK?!***" )
+        components.html(
 			"""
 			<!DOCTYPE html>
 			<html>
@@ -118,23 +121,60 @@ class home1:
 			height=700
 			)
 		
-		st.markdown("---")
-		st.markdown("***How Does it Work?***" )
+        st.markdown("---")
+        st.markdown("***How Does it Work?***" )
 
 		
-		st.markdown("""Spark is capable of running different types of jobs. In this interface, we focus specifically on three specific types:""")
-		st.markdown("""**Word Count:** One simple implementation for Spark is to count the number of words in a document or set of documents.""")
-		st.markdown("""**Spark for Machine Learning:** Spark can also be a used for a ML job under many different optimizations for ML Training.""")
-		st.markdown("""**Extract, Transform, Load (ETL) job:** This application would read in some very large dataset from the web, perform some transformations to prepare it for efficient queries, and store the data in some intermediate output format to prepare it for loading into a database.""")
-		st.markdown("")
-		st.markdown("""*Note: For simplicity, this interface will be performed using a premade static dataset of Spark job data.""" )
+        st.markdown("""Spark is capable of running different types of jobs. In this interface, we focus specifically on three specific types:""")
+        components.html(
+            """
+            <!-- Slideshow container -->
+            <html>
+            <div class="slideshow-container">
+            
+              <!-- Full-width images with number and caption text -->
+              <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="img1.jpg" style="width:100%">
+                <div class="text">Caption Text</div>
+              </div>
+            
+              <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="img2.jpg" style="width:100%">
+                <div class="text">Caption Two</div>
+              </div>
+            
+              <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="img3.jpg" style="width:100%">
+                <div class="text">Caption Three</div>
+              </div>
+            
+              <!-- Next and previous buttons -->
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            </html>
+            """,
+            height=700
+            )
+        st.markdown("""*Note: For simplicity, this interface will be performed using a premade static dataset of Spark job data.""" )
 				
 
 
-		st.markdown("---")
-		st.markdown("***So What's the Problem?***" )
-		st.markdown("_Here's what Spark results look like now:_" )
-		components.html(
+        st.markdown("---")
+        st.markdown("***So What's the Problem?***" )
+        st.markdown("_Here's what Spark results look like now:_" )
+        components.html(
 			"""
 			<!DOCTYPE html>
 			<html>
