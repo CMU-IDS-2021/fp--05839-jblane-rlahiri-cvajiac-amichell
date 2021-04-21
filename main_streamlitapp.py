@@ -69,9 +69,7 @@ class home1:
         st.markdown(page_bg_img, unsafe_allow_html=True)
         with open('./style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-        with open('./carousel.js') as f:
-            st.markdown(f'<script>{f.read()}</script>', unsafe_allow_html=True)
-            
+
 
         st.title("⭐A Better Spark User Interface⭐")
         st.markdown("---")
@@ -131,6 +129,37 @@ class home1:
             """
             <!-- Slideshow container -->
             <html>
+            <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            // Thumbnail image controls
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
+            
             <div class="slideshow-container">
             
               <!-- Full-width images with number and caption text -->
