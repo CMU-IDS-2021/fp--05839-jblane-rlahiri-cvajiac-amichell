@@ -3,8 +3,12 @@
 body {
     color: #fff;
     background: linear-gradient(#C88F0A,white)!important;
-    font: 18px "verdana";
+
     /*background-color: #C88F0A;*/
+}
+.listFont{
+    font: 18px "verdana";
+
 }
 .stApp {
   /*background: url("apache-spark1.jpg")*/

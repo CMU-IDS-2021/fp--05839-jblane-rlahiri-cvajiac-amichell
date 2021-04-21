@@ -361,17 +361,17 @@ class home1:
 	  		</div>
 			</div>
 			
-			<p style="font-size:18px;font-family:verdana">
+			<p class = "listFont">
             Pros:</p>
                 </br>
-                <ul>
+                <ul class="listFont">
                 <li>Some useful information: job duration, stages, progress bar, etc.</li>
                 </ul>
                 </br> </br>
 			
             <p style="font-size:18px;font-family:verdana">
             Cons:</br></p>
-                <ul>
+                <ul class="listFont">
                 <li>which machines running which jobs?</li>
                 <li>where is the data being transferred?</li>
                 <li>where are the bottlenecks?</li>
