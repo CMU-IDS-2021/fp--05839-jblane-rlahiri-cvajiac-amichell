@@ -123,8 +123,11 @@ class home1:
         st.markdown("***How Does it Work?***" )
 
 		
-        st.markdown("""Spark is capable of running different types of jobs. In this interface, we focus three specific types:""")
-        
+        st.markdown("""
+            <html>
+            <p style="font-size:18px;font-family:verdana">Spark is capable of running different types of jobs. In this interface, we focus three specific types:
+            </p>"""
+            )
         components.html(
             """
             <!-- Slideshow container -->
