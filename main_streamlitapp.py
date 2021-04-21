@@ -126,6 +126,7 @@ class home1:
 
 		
         st.markdown("""Spark is capable of running different types of jobs. In this interface, we focus specifically on three specific types:""")
+        
         components.html(
             """
             <!-- Slideshow container -->
@@ -167,6 +168,7 @@ class home1:
             """,
             height=700
             )
+        
         st.markdown("""*Note: For simplicity, this interface will be performed using a premade static dataset of Spark job data.""" )
 				
 
