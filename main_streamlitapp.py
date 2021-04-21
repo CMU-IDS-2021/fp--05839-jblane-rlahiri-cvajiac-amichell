@@ -83,7 +83,7 @@ class home1:
 			<style>
 			.container {
 	 		position: center;
-	  		width: 30%;
+	  		width: 100%;
 			}
 	
 			.image {
