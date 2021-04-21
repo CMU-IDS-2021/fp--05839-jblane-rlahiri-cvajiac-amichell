@@ -361,7 +361,7 @@ class home1:
 	  		</div>
 			</div>
 			
-			<p class = "listFont">
+			<p style="font-size:18px;font-family:verdana">
             Pros:</p>
                 </br>
                 <ul class="listFont">
