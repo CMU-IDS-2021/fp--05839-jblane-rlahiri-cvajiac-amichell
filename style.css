@@ -3,6 +3,7 @@
 body {
     color: #fff;
     background: linear-gradient(#C88F0A,white)!important;
+    font: 18px "verdana";
     /*background-color: #C88F0A;*/
 }
 .stApp {
