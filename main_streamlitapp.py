@@ -108,7 +108,7 @@ class home1:
 			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>
 			
 			<div class="container">
-	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" style="height:200">
+	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" style="height:100%">
 			</div>
 			
 			</body>
