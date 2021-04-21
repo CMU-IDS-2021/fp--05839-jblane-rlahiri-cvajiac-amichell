@@ -69,9 +69,9 @@ class home1:
         st.markdown(page_bg_img, unsafe_allow_html=True)
         with open('./style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-            
-        with open('./carousel.css') as f:
+        with open('./carousel.js') as f:
             st.markdown(f'<script>{f.read()}</script>', unsafe_allow_html=True)
+            
 
         st.title("⭐A Better Spark User Interface⭐")
         st.markdown("---")
