@@ -362,7 +362,11 @@ class home1:
 			</div>
 			
 			<p style="font-size:18px;font-family:verdana">
-            Pros: Some useful information: job duration, stages, progress bar, etc. </br> </br>
+            Pros:</br>
+                <ul>
+                <li>Some useful information: job duration, stages, progress bar, etc.</li>
+                </ul>
+                </br> </br>
 			Cons:</br>
                 <ul>
                 <li>which machines running which jobs?</li>
