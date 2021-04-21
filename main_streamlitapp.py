@@ -362,12 +362,15 @@ class home1:
 			</div>
 			
 			<p style="font-size:18px;font-family:verdana">
-            Pros:</br>
+            Pros:</p>
+                </br>
                 <ul>
                 <li>Some useful information: job duration, stages, progress bar, etc.</li>
                 </ul>
                 </br> </br>
-			Cons:</br>
+			
+            <p style="font-size:18px;font-family:verdana">
+            Cons:</br></p>
                 <ul>
                 <li>which machines running which jobs?</li>
                 <li>where is the data being transferred?</li>
