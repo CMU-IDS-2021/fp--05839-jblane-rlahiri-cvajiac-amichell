@@ -361,8 +361,14 @@ class home1:
 	  		</div>
 			</div>
 			
-			<p style="font-size:18px;font-family:verdana">This UI displays some information, such as the job duration, stages, and a progress bar.
-				However, all the information is displayed in tabular format and we don’t see a lot of other useful information,
+			<p style="font-size:18px;font-family:verdana">Pros: Some useful information: job duration, stages, progress bar, etc. </br> </br>
+				Cons:</br>
+                <ul>
+                <li>which machines running which jobs?</li>
+                <li>where is the data being transferred?</li>
+                <li>where are the bottlenecks?</li>
+                <li>time spent executing, shuffling, reading/writing data?</li>
+                <li>tabular format: difficult to <i>visualize</i> useful information
 				such as memory usage or shuffle read/writes. While this information is available, it is not presented with
 				effective visual encodings that identify clearly the implication of different characteristics of Spark jobs.
 				Furthermore, once the end user has hundreds or thousands of jobs, these tables become impossible to parse.</p>
