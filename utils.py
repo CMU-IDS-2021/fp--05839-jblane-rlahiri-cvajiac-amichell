@@ -14,8 +14,8 @@ def prep_data(filename: str) -> str:
 		data = [json.loads(line) for line in f]
 
 	url = '{}-sanitized.json'.format(os.path.splitext(filename)[0])
-	with open(url, 'w') as f:
-		json.dump(data, f)
+	#with open(url, 'w') as f:
+	#	json.dump(data, f)
 
 	base = 'https://raw.githubusercontent.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/main/data/{}-sanitized.json'
 	return base.format(extract_filename(filename))
