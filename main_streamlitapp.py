@@ -363,7 +363,7 @@ class home1:
 			
 			<p style="font-size:18px;font-family:verdana">Pros: Some useful information: job duration, stages, progress bar, etc. </br> </br>
 				Cons:</br>
-                <ul>
+                <ul style="font-size:18px;font-family:verdana>
                 <li>which machines running which jobs?</li>
                 <li>where is the data being transferred?</li>
                 <li>where are the bottlenecks?</li>
