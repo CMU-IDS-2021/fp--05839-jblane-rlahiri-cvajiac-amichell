@@ -123,7 +123,7 @@ class home1:
         st.markdown("***How Does it Work?***" )
 
 		
-        st.markdown("""Spark is capable of running different types of jobs. In this interface, we focus specifically on three specific types:""")
+        st.markdown("""Spark is capable of running different types of jobs. In this interface, we focus three specific types:""")
         
         components.html(
             """
@@ -293,7 +293,7 @@ class home1:
             height=800
             )
         
-        st.markdown("""*Note: For simplicity, this interface will be performed using a premade static dataset of Spark job data.""" )
+        st.markdown("""*Note: For simplicity, this interface will be performed using preselected optimization strategies for each Spark job.""" )
 				
 
 
