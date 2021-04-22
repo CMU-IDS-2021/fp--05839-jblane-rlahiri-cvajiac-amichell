@@ -97,7 +97,7 @@ class home1:
 			<body>
 
 			<div class="container">
-	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="sparklogo" class="image" style="width:100%">
+	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="sparklogo" class="image" style="height:100%">
 			</div>
 			
 			</body>
@@ -136,7 +136,7 @@ class home1:
 			<body>
 
 			<div class="container">
-	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" style="height:100%">
+	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" style="width:100%">
 			
             </div>
 			
