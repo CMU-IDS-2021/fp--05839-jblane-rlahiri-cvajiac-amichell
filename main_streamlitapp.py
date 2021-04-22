@@ -79,7 +79,7 @@ class home1:
         sparkLogo = Image.open('./spark-logo-trademark.png')
         st.image(sparkLogo)
 
-        sparkCircle = Image.open('./spark-logo-trademark.png')
+        sparkCircle = Image.open('./sparkCircle.png')
         st.image(sparkCircle)
 
         st.markdown("""<p class="listFont"> Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
