@@ -147,7 +147,7 @@ class home1:
 			height=500
 			)
         st.markdown("---")
-        st.markdown("***How Does it Work?***" )
+        st.markdown("***HOW DOES IT WORK?***" )
 
 		
         st.markdown("""<p class="listFont"> Spark is capable of running different types of jobs. In this interface, we focus on three specific types (click side arrows):</p>
@@ -326,7 +326,7 @@ class home1:
 
 
         st.markdown("---")
-        st.markdown("***So What's the Problem?***" )
+        st.markdown("***SO, WHAT'S THE PROBLEM?***" )
         st.markdown("_Here's what Spark results look like now:_" )
         components.html(
 			"""
