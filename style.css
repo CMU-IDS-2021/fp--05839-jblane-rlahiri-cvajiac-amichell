@@ -8,10 +8,11 @@ body {
 }
 
 .listFont{
-    font-size: 18px;
-    font-family:"verdana";
+    font-size: 18px !important;
+    font-family:"verdana" !important;
 
 }
+
 .stApp {
   /*background: url("apache-spark1.jpg")*/
   background: linear-gradient(#C88F0A,white)!important;
