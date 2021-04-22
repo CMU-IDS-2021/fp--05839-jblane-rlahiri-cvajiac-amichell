@@ -109,7 +109,8 @@ class home1:
 			
 			<div class="container">
 	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" style="height:100%">
-			</div>
+			
+            </div>
 			
 			</body>
 
