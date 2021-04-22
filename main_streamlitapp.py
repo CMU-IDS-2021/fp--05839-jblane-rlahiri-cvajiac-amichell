@@ -75,7 +75,7 @@ class home1:
         st.title("⭐A Better Spark User Interface⭐")
         st.markdown("---")
         
-        st.markdown("***First, WHAT IS APACHE SPARK?!***" )
+        #st.markdown("***First, WHAT IS APACHE SPARK?!***" )
         my_expander1 = st.beta_expander("***First, WHAT IS APACHE SPARK?!***")
         
         with my_expander1:
