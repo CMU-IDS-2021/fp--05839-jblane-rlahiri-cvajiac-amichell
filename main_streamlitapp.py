@@ -99,7 +99,42 @@ class home1:
 			<div class="container">
 	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" style="height:25">
 			</div>
-            
+			
+			</body>
+
+			</html>
+			""",
+			height=100
+			)
+
+        st.markdown("""<p class="listFont"> Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
+			engine for big data processing. It includes support for SQL queries, streaming 
+			data, machine learning, and graph processing. Spark runs on Hadoop, Apache Mesos, 
+			Kubernetes, standalone, or in the cloud. Internet companies such as 
+			Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
+			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>""", unsafe_allow_html=True)
+        components.html(
+			"""
+			<!DOCTYPE html>
+			<html>
+			<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<style>
+            * {
+              box-sizing: border-box;
+            }
+			.container {
+	 		position: relative;
+			}
+	
+			.image {
+	  		display: block;
+			}
+			</style>
+			</head>
+			
+			<body>
+
 			<div class="container">
 	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="Current Spark Results" class="image" style="height:100%">
 			
@@ -109,14 +144,8 @@ class home1:
 
 			</html>
 			""",
-			height=900
+			height=200
 			)
-        st.markdown("""<p class="listFont"> Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
-			engine for big data processing. It includes support for SQL queries, streaming 
-			data, machine learning, and graph processing. Spark runs on Hadoop, Apache Mesos, 
-			Kubernetes, standalone, or in the cloud. Internet companies such as 
-			Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
-			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>""", unsafe_allow_html=True)
         st.markdown("---")
         st.markdown("***How Does it Work?***" )
 
