@@ -323,7 +323,7 @@ class home1:
             </script>
             
             """,
-            height=600
+            height=800
             )
 		
 
