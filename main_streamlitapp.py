@@ -74,22 +74,26 @@ class home1:
 
         st.title("⭐A Better Spark User Interface⭐")
         st.markdown("---")
+        
         st.markdown("***First, WHAT IS APACHE SPARK?!***" )
+        my_expander1 = st.beta_expander("HOW DOES IT WORK?")
         
-        sparkLogo = Image.open('./spark-logo-trademark.png')
-        st.image(sparkLogo)
-
-
-        st.markdown("""<p class="listFont"> Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
-			engine for big data processing. It includes support for SQL queries, streaming 
-			data, machine learning, and graph processing. Spark runs on Hadoop, Apache Mesos, 
-			Kubernetes, standalone, or in the cloud. Internet companies such as 
-			Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
-			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>""", unsafe_allow_html=True)
-        
-
-        
+        with my_expander1:
+            sparkLogo = Image.open('./spark-logo-trademark.png')
+            st.image(sparkLogo)
+    
+    
+            st.markdown("""<p class="listFont"> Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
+    			engine for big data processing. It includes support for SQL queries, streaming 
+    			data, machine learning, and graph processing. Spark runs on Hadoop, Apache Mesos, 
+    			Kubernetes, standalone, or in the cloud. Internet companies such as 
+    			Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
+    			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>""", unsafe_allow_html=True)
+            
+    
+            
         st.markdown("---")
+
         st.markdown("***HOW DOES IT WORK?***" )
 
 		
