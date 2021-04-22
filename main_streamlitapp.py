@@ -394,7 +394,7 @@ class home1:
 	  		</div>
 			</div>
 			
-			<p style="listFont">
+			<p style="font-size:18px;font-family:verdana">
             Pros: </br> </p>
                 <ul class="listFont">
                 <li>Some useful information: job duration, stages, progress bar, etc.</li>
