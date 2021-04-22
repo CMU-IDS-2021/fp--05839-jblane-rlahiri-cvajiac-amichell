@@ -76,8 +76,8 @@ class home1:
         st.markdown("---")
         st.markdown("***First, WHAT IS APACHE SPARK?!***" )
         
-        sparkLogo = Image.open("./spark-logo-trademark.png")
-        st.image("sparkLogo")
+        sparkLogo = Image.open('./spark-logo-trademark.png')
+        st.image(sparkLogo)
         
         components.html(
 			"""
