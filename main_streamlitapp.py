@@ -348,7 +348,10 @@ class home1:
 	  		text-align: center;
 			}
             
-
+            .listFont{
+            font-size: 18px;
+            font-family: verdana;
+            }
             
 			</style>
 			</head>
