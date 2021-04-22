@@ -23,7 +23,7 @@ local_css("style.css")
 
 
 st.title("⭐Why Do We Need a Better Spark UI?⭐")
-#st.text("An Interactive Visualization")#
+st.text("An Interactive Visualization")
 st.markdown("---")
 st.markdown("_**First, WHAT IS SPARK?!**_" )
 components.html(

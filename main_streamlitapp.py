@@ -3,7 +3,6 @@
 """
 Created on Thu Apr  8 10:30:52 2021
 
-@author: jblane
 """
 
 import streamlit as st
@@ -76,7 +75,7 @@ class home1:
         st.markdown("---")
         
         #st.markdown("***First, WHAT IS APACHE SPARK?!***" )
-        my_expander1 = st.beta_expander("***First, WHAT IS APACHE SPARK?!***")
+        my_expander1 = st.beta_expander("1) WHAT IS APACHE SPARK?!")
         
         with my_expander1:
             sparkLogo = Image.open('./spark-logo-trademark.png')
@@ -90,63 +89,63 @@ class home1:
     			Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
     			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>""", unsafe_allow_html=True)
             
-    
             
-        st.markdown("---")
 
-        st.markdown("***HOW DOES IT WORK?***" )
-
+        #st.markdown("***HOW DOES IT WORK?***" )
+        my_expander2 = st.beta_expander("2) HOW DOES IT WORK?")
+        
+        with my_expander2:
 		
-        st.markdown("""<p class="listFont"> Spark is capable of running different types of jobs. In this interface, we focus on three specific types (click side arrows):</p>
-            """, unsafe_allow_html=True)
+            st.markdown("""<p class="listFont"> Spark is capable of running different types of jobs. In this interface, we focus on three specific types (click side arrows):</p>
+                """, unsafe_allow_html=True)
 
-        components.html(
-            """
-            <!-- Slideshow container -->
-            <html>
-            <style>
-            /*----------------------Carousel styles-----------------------*/
-            * {
-              box-sizing: border-box;
-            }
-            
-            /* Position the image container (needed to position the left and right arrows) */
-            .container {
-              position: relative;
-            }
-            
-            /* Hide the images by default */
-            .mySlides {
-              display: none;
-            }
-            
-            /* Add a pointer when hovering over the thumbnail images */
-            .cursor {
-              cursor: pointer;
-            }
-            
-            /* Next & previous buttons */
-            .prev,
-            .next {
-              cursor: pointer;
-              position: absolute;
-              top: 40%;
-              width: auto;
-              padding: 16px;
-              margin-top: -50px;
-              color: white;
-              font-weight: bold;
-              font-size: 20px;
-              border-radius: 0 3px 3px 0;
-              user-select: none;
-              -webkit-user-select: none;
-            }
+            components.html(
+                """
+                <!-- Slideshow container -->
+                <html>
+                <style>
+                /*----------------------Carousel styles-----------------------*/
+                * {
+                    box-sizing: border-box;
+                    }
+                
+                /* Position the image container (needed to position the left and right arrows) */
+                .container {
+                    position: relative;
+                    }
+                
+                /* Hide the images by default */
+                .mySlides {
+                    display: none;
+                    }
+                
+                /* Add a pointer when hovering over the thumbnail images */
+                .cursor {
+                    cursor: pointer;
+                    }
+                
+                /* Next & previous buttons */
+                .prev,
+                .next {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 40%;
+                    width: auto;
+                    padding: 16px;
+                    margin-top: -50px;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 20px;
+                    border-radius: 0 3px 3px 0;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    }
             
             /* Position the "next button" to the right */
             .next {
-              right: 0;
-              border-radius: 3px 0 0 3px;
-            }
+                right: 0;
+                border-radius: 3px 0 0 3px;
+                }
             
             /* On hover, add a black background color with a little bit see-through */
             .prev:hover,
@@ -269,18 +268,20 @@ class home1:
             }
             </script>
             
-            """,
-            height=800
-            )
+                """,
+                height=800
+                )
 		
 
 
         #st.markdown("---")
-        st.markdown("***SO, WHAT'S THE PROBLEM?***" )
-        st.markdown("""<p class="listFont"> Here's what Spark results look like now:</p>
-            """, unsafe_allow_html=True)
-        components.html(
-			"""
+        #st.markdown("***SO, WHAT'S THE PROBLEM?***" )
+        my_expander3 = st.beta_expander("3) SO, WHAT'S THE PROBLEM?")
+        
+        with my_expander3:
+            st.markdown("""<p class="listFont"> Here's what Spark results look like now:</p>
+                        """, unsafe_allow_html=True)
+            components.html("""
 			<!DOCTYPE html>
 			<html>
 			<head>
@@ -367,8 +368,8 @@ class home1:
 			</body>
 			</html>
 			""",
-			height=800
-			)
+    			height=800)
+
 
 
 
