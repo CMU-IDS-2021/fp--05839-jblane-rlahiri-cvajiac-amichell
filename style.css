@@ -1,9 +1,5 @@
 
-html *
-{
-    font-size: 18px;
-    font-family:"verdana";
-}
+
 body {
     color: #fff;
     background: linear-gradient(#C88F0A,white)!important;
