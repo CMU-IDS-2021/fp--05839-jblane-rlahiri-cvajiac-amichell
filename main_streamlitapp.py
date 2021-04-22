@@ -325,14 +325,13 @@ class home1:
             """,
             height=600
             )
-        
-        st.markdown("""*Note: For simplicity, this interface will be performed using preselected optimization strategies for each Spark job.""" )
-				
+		
 
 
         st.markdown("---")
         st.markdown("***SO, WHAT'S THE PROBLEM?***" )
-        st.markdown("_Here's what Spark results look like now:_" )
+        st.markdown("""<p class="listFont"> Here's what Spark results look like now:</p>
+            """, unsafe_allow_html=True)
         components.html(
 			"""
 			<!DOCTYPE html>
