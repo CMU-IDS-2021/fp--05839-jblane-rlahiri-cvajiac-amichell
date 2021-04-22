@@ -369,14 +369,16 @@ class home1:
 			
 			<p style="font-size:18px;font-family:verdana">
             Pros:
+            </p>
                 </br>
                 <ul class="listFont">
                 <li>Some useful information: job duration, stages, progress bar, etc.</li>
                 </ul>
                 </br> </br>
 			
-
+            <p style="font-size:18px;font-family:verdana">
             Cons:</br>
+            </p>
                 <ul class="listFont">
                 <li>which machines running which jobs?</li>
                 <li>where is the data being transferred?</li>
@@ -384,7 +386,7 @@ class home1:
                 <li>time spent executing, shuffling, reading/writing data?</li>
                 <li>tabular format: difficult to <i>visualize</i> useful information
                 </ul>
-            </p>
+    
 				
 			</body>
 			</html>
