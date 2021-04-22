@@ -78,7 +78,10 @@ class home1:
         
         sparkLogo = Image.open('./spark-logo-trademark.png')
         st.image(sparkLogo)
-    
+
+        sparkCircle = Image.open('./spark-logo-trademark.png')
+        st.image(sparkCircle)
+
         st.markdown("""<p class="listFont"> Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
 			engine for big data processing. It includes support for SQL queries, streaming 
 			data, machine learning, and graph processing. Spark runs on Hadoop, Apache Mesos, 
@@ -86,8 +89,7 @@ class home1:
 			Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
 			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>""", unsafe_allow_html=True)
         
-        sparkCircle = Image.open('./sparkCircle.png')
-        st.image(sparkCircle) 
+
         
         st.markdown("---")
         st.markdown("***HOW DOES IT WORK?***" )
