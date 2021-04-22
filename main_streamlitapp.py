@@ -151,8 +151,8 @@ class home1:
 
 		
         st.markdown("""<p class="listFont"> Spark is capable of running different types of jobs. In this interface, we focus on three specific types (click side arrows):</p>
-            """
-            )
+            """, unsafe_allow_html=True)
+
         components.html(
             """
             <!-- Slideshow container -->
