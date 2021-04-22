@@ -377,7 +377,7 @@ class home1:
             
             .listFont{
             font-size: 18px;
-            font-family: verdana;
+            font-family: "verdana";
             }
             
 			</style>
