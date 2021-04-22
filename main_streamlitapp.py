@@ -16,6 +16,7 @@ import base64
 from vega_datasets import data
 import nx_altair
 import draw, utils
+from PIL import Image
 #import awesome_streamlit as ast
 #import home
 #import interface
@@ -74,6 +75,10 @@ class home1:
         st.title("⭐A Better Spark User Interface⭐")
         st.markdown("---")
         st.markdown("***First, WHAT IS APACHE SPARK?!***" )
+        
+        sparkLogo = Image.open("./spark-logo-trademark.png")
+        st.image("sparkLogo")
+        
         components.html(
 			"""
 			<!DOCTYPE html>
@@ -113,6 +118,7 @@ class home1:
 			Kubernetes, standalone, or in the cloud. Internet companies such as 
 			Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
 			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>""", unsafe_allow_html=True)
+    
         components.html(
 			"""
 			<!DOCTYPE html>
