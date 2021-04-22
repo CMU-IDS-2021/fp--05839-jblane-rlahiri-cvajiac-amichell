@@ -97,7 +97,7 @@ class home1:
 			<body>
 
 			<div class="container">
-	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" style="height:25">
+	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Current Spark Results" class="image" style="height:100%">
 			</div>
 			
 			</body>
