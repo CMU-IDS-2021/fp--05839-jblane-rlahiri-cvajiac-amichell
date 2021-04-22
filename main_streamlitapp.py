@@ -78,80 +78,17 @@ class home1:
         
         sparkLogo = Image.open('./spark-logo-trademark.png')
         st.image(sparkLogo)
-        
-        components.html(
-			"""
-			<!DOCTYPE html>
-			<html>
-			<head>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<style>
-            * {
-              box-sizing: border-box;
-            }
-			.container {
-	 		position: relative;
-			}
-	
-			.image {
-	  		display: block;
-			}
-			</style>
-			</head>
-			
-			<body>
-
-			<div class="container">
-	  		<img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="sparklogo" class="image" style="height:100%">
-			</div>
-			
-			</body>
-
-			</html>
-			""",
-			height=250
-			)
-
+    
         st.markdown("""<p class="listFont"> Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
 			engine for big data processing. It includes support for SQL queries, streaming 
 			data, machine learning, and graph processing. Spark runs on Hadoop, Apache Mesos, 
 			Kubernetes, standalone, or in the cloud. Internet companies such as 
 			Netflix, Yahoo, and eBay have deployed Spark at massive scale, collectively 
 			processing multiple petabytes of data on clusters of over 8,000 nodes.</p>""", unsafe_allow_html=True)
-    
-        components.html(
-			"""
-			<!DOCTYPE html>
-			<html>
-			<head>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<style>
-            * {
-              box-sizing: border-box;
-            }
-			.container {
-	 		position: relative;
-			}
-	
-			.image {
-	  		display: block;
-			}
-			</style>
-			</head>
-			
-			<body>
-
-			<div class="container">
-	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="SparkCircle" class="image" style="width:100%">
-			
-            </div>
-			
-			</body>
-
-			</html>
-			""",
-			height=600
-			)
+        
+        sparkCircle = Image.open('./sparkCircle.png')
+        st.image(sparkCircle) 
+        
         st.markdown("---")
         st.markdown("***HOW DOES IT WORK?***" )
 
