@@ -104,7 +104,7 @@ class home1:
 
 			</html>
 			""",
-			height=100
+			height=300
 			)
 
         st.markdown("""<p class="listFont"> Originated at UC Berkeley in 2009, Apache Spark is a unified analytics 
@@ -144,7 +144,7 @@ class home1:
 
 			</html>
 			""",
-			height=200
+			height=500
 			)
         st.markdown("---")
         st.markdown("***How Does it Work?***" )
