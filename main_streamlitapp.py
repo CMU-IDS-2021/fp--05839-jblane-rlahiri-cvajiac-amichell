@@ -76,7 +76,7 @@ class home1:
         st.markdown("---")
         
         st.markdown("***First, WHAT IS APACHE SPARK?!***" )
-        my_expander1 = st.beta_expander("HOW DOES IT WORK?")
+        my_expander1 = st.beta_expander("***First, WHAT IS APACHE SPARK?!***")
         
         with my_expander1:
             sparkLogo = Image.open('./spark-logo-trademark.png')
@@ -275,7 +275,7 @@ class home1:
 		
 
 
-        st.markdown("---")
+        #st.markdown("---")
         st.markdown("***SO, WHAT'S THE PROBLEM?***" )
         st.markdown("""<p class="listFont"> Here's what Spark results look like now:</p>
             """, unsafe_allow_html=True)
