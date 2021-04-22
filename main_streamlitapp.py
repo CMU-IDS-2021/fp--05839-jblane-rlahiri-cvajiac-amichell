@@ -347,6 +347,12 @@ class home1:
 	  		transform: translate(-50%, -50%);
 	  		text-align: center;
 			}
+            
+            .listFont{
+            font-size: 18px;
+            font-family: verdana;
+            }
+            
 			</style>
 			</head>
 			<body>
@@ -362,15 +368,15 @@ class home1:
 			</div>
 			
 			<p style="font-size:18px;font-family:verdana">
-            Pros:</p>
+            Pros:
                 </br>
                 <ul class="listFont">
                 <li>Some useful information: job duration, stages, progress bar, etc.</li>
                 </ul>
                 </br> </br>
 			
-            <p style="font-size:18px;font-family:verdana">
-            Cons:</br></p>
+
+            Cons:</br>
                 <ul class="listFont">
                 <li>which machines running which jobs?</li>
                 <li>where is the data being transferred?</li>
