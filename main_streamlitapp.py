@@ -136,7 +136,7 @@ class home1:
 			<body>
 
 			<div class="container">
-	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="SparkCircle" class="image" style="height:200">
+	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/sparkCircle.png?raw=true" alt="SparkCircle" class="image" style="height:100%">
 			
             </div>
 			
@@ -144,7 +144,7 @@ class home1:
 
 			</html>
 			""",
-			height=400
+			height=600
 			)
         st.markdown("---")
         st.markdown("***HOW DOES IT WORK?***" )
