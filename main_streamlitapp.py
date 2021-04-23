@@ -294,8 +294,8 @@ class home1:
 	
 			.image {
 	  		display: block;
-	  		width: auto;
-	  		height: 100;
+	  		width: 200%;
+	  		height: auto;
 			}
 	
 			.overlay {
