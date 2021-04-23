@@ -369,7 +369,8 @@ class home1:
 			</html>
 			""",
     			height=800)
-            st.markdown("Click on the Main Interface on the Navigation bar (to the left) to see how applied more useful visualizations." )
+            st.markdown("---")
+            st.markdown("Click on the Main Interface on the Navigation bar (to the left) to see how we created more useful visualizations." )
 
 
 
