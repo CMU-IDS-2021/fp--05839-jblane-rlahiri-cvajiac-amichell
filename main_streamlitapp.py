@@ -340,7 +340,7 @@ class home1:
 			<!--<p>Hover over the image to see the effect.</p>-->
 	
 			<div class="container">
-	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/job_example.png?raw=true" alt="Current Spark Results" class="image" >
+	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/job_example.png?raw=true" alt="Current Spark Results" class="image" style="height:400">
 	  		<div class="overlay">
 			<div class="text">Some useful stuff, but how to make sense of it?!</div>
 	  		</div>
@@ -369,6 +369,7 @@ class home1:
 			</html>
 			""",
     			height=800)
+            
         st.markdown("Click on the Main Interface on the Navigation bar (to the left) to see how we created more useful visualizations." )
 
 
