@@ -194,7 +194,11 @@ class home1:
             
             
             </style>
-            
+            <div>
+            <p style="font-size:18px;font-family:verdana">
+            *Note: For simplicity, this interface will be performed using preselected optimization strategies for each Spark job.
+            </p>
+            </div>
             
             <div class="slideshow-container">
             
@@ -229,11 +233,7 @@ class home1:
               <span class="dot" onclick="currentSlide(2)"></span>
               <span class="dot" onclick="currentSlide(3)"></span>
             </div>
-            <div>
-            <p style="font-size:18px;font-family:verdana">
-            *Note: For simplicity, this interface will be performed using preselected optimization strategies for each Spark job.
-            </p>
-            </div>
+
             </html>
             
             
