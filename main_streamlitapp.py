@@ -269,7 +269,7 @@ class home1:
             </script>
             
                 """,
-                height=800
+                height=800,scrolling=True
                 )
 		
 
