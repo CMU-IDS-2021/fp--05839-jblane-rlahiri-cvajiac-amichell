@@ -295,7 +295,7 @@ class home1:
 			.image {
 	  		display: block;
 	  		width: auto;
-	  		height: 400;
+	  		height: auto;
 			}
 	
 			.overlay {
