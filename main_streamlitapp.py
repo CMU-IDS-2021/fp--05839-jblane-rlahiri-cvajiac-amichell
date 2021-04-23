@@ -368,7 +368,8 @@ class home1:
 			</body>
 			</html>
 			""",
-    			height=800)
+    			height=800,
+                scrolling=True)
             
         st.markdown("Click on the Main Interface on the Navigation bar (to the left) to see how we created more useful visualizations." )
 
