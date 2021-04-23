@@ -294,8 +294,8 @@ class home1:
 	
 			.image {
 	  		display: block;
-	  		width: 200%;
-	  		height: auto;
+	  		width: auto;
+	  		height: 400;
 			}
 	
 			.overlay {
@@ -340,7 +340,7 @@ class home1:
 			<!--<p>Hover over the image to see the effect.</p>-->
 	
 			<div class="container">
-	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/job_example.png?raw=true" alt="Current Spark Results" class="image" style="height:400">
+	  		<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/job_example.png?raw=true" alt="Current Spark Results" class="image">
 	  		<div class="overlay">
 			<div class="text">Some useful stuff, but how to make sense of it?!</div>
 	  		</div>
