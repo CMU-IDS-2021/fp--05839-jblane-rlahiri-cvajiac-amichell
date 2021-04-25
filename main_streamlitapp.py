@@ -406,7 +406,34 @@ class interface:
 				"Which problem do you want to Visualize?", ["Word Count","Spark for ML","Apply Optimizations to an Extract, Transform, Load (ETL) job"])
 		if task=="Word Count":
 			with st.beta_expander('Click Here to Display the Code!!!'):
-				st.code("class a")
+				             st.code("""
+             
+             import sys
+             from operator import add
+
+             from pyspark.sql import SparkSession
+
+
+             if __name__ == "__main__":
+                if len(sys.argv) != 2:
+                    print("Usage: wordcount <file>", file=sys.stderr)
+                    sys.exit(-1)
+
+            spark = SparkSession\\
+                    .builder\\
+                    .appName("PythonWordCount")\\
+                    .getOrCreate()
+
+            lines = spark.read.text(sys.argv[1]).rdd.map(lambda r: r[0])
+            counts = lines.flatMap(lambda x: x.split(' ')) \\
+                        .map(lambda x: (x, 1)) \\
+                        .reduceByKey(add)
+            output = counts.collect()
+            for (word, count) in output:
+                print("%s: %i" % (word, count))
+
+            spark.stop()
+             """)
 		plot=alt.Chart(source).mark_bar().encode(
 			alt.X("IMDB_Rating:Q", title='Time'),
 			y='count()',
