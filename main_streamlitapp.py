@@ -431,6 +431,7 @@ class interface:
 		with st.beta_expander('Click Here to View the Task Graph:'):
 			st.write('Task Graph: what are the job dependencies?')
 			st.altair_chart(draw.job_dag(dag, filename_strip), use_container_width=True)
+		st.write()
 		#col1, _, col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1, 1, 0.1])
 		col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1])
 		#with col1:
