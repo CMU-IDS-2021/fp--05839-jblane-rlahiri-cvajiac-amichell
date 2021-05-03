@@ -470,7 +470,7 @@ class interface:
 
 		with col2:
 			st.write('Breakdown of events: What is Spark doing?')
-			st.altair_chart(draw.count_histogram(url, 'Event:N'), use_container_width=True)
+			st.altair_chart(draw.strip_chart(url, 'Event:N'), use_container_width=True)
 
 		with col3:
 			st.write('How long does each job take?')
