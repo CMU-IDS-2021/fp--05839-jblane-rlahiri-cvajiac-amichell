@@ -32,11 +32,11 @@ def count_histogram(url: list, field: str) -> alt.Chart:
 
 
 def strip_chart(url: list, field: str) -> alt.Chart:
-    ''' produce histogram displaying counts of a particular field
+    ''' produce strip chart diplaying counts of a particular field
 
         :param url: online url or path to data
         :param field: field to count (with ty over timepe specified) 
-        :return altair histogram of counts '''
+        :return altair strip chart of counts '''
 
     field_s = field.split(':')[0] # split type from field name
 
@@ -57,7 +57,6 @@ def strip_chart(url: list, field: str) -> alt.Chart:
             time=time_s
         ).mark_tick(
             binSpacing=0,
-            #thickness=6
         ).encode(
             x=alt.X('time:T', axis=alt.Axis(labelAngle=-45, grid=False)),
             y=alt.Y(field, scale=alt.Scale(type='log'), axis=alt.Axis(grid=False)),
@@ -65,7 +64,7 @@ def strip_chart(url: list, field: str) -> alt.Chart:
             tooltip=['time:T', 'count()']
         ).properties(
             height=300,
-            width=700
+            width=600
         )
     for event, time_s in specs])
 
@@ -78,8 +77,8 @@ def job_times(url: str) -> alt.Chart:
     return alt.Chart(url).transform_calculate(
         time="replace(toString(datum['Submission Time']) + toString(datum['Completion Time']), 'null', '')"
     ).mark_area().encode(
-        x=alt.X('time:T'),
-        y=alt.Y('count()'),
+        x=alt.X('time:T', axis=alt.Axis(grid=False)),
+        y=alt.Y('count()', axis=alt.Axis(grid=False)),
         row=alt.Row('Job ID:O'),
         tooltip = ['time:T', 'count()']
     ).properties(
@@ -88,7 +87,7 @@ def job_times(url: str) -> alt.Chart:
     ).transform_filter(
         (alt.datum.Event == 'SparkListenerJobStart') | (alt.datum.Event == 'SparkListenerJobEnd')
     ).configure_facet(
-        spacing=0
+        spacing=1
     )
 
 
@@ -121,13 +120,14 @@ def data_spill(url: str) -> alt.Chart:
 
         :param url: link to data
         :return altair chart of data spill'''
-    return alt.Chart(url).mark_bar().transform_filter(
+    return alt.Chart(url).mark_area().transform_filter(
         (alt.datum.Event == 'SparkListenerTaskEnd')
     ).transform_calculate(
         bytes="datum['Task Metrics']['Disk Bytes Spilled'] / 1000000"
     ).encode(
         x=alt.X('Task Info.Finish Time:T', axis=alt.Axis(title='Time')),
-        y=alt.Y('bytes:Q', axis=alt.Axis(title='MB spilled to mem & disk')),
+        y=alt.Y('bytes:Q', stack='center', axis=alt.Axis(title='MB spilled to mem & disk')),
+        color=alt.Color('Stage ID:N', scale=alt.Scale(scheme='category20b'), legend=None),
         tooltip=['Task Info.Finish Time:T', 'bytes:Q']
     )
 
@@ -139,15 +139,15 @@ def shuffle_read_write(url: str) -> alt.Chart:
         :return altair chart of shuffle reads/writes '''
     # makes transform_calc string nicer
     datum_s = lambda s1, s2: "datum['Task Metrics']['Shuffle {} Metrics']['{}']".format(s1, s2)
-
-    return alt.Chart(url).mark_bar().transform_filter(
-        (alt.datum.Event == 'SparkListenerTaskEnd')
+    return alt.Chart(url).mark_area().transform_filter(
+        alt.datum.Event == 'SparkListenerTaskEnd'
     ).transform_calculate(
         bytes="({}+{}) / 1000000".format(datum_s('Read', 'Local Bytes Read'), datum_s('Write', 'Shuffle Bytes Written'))
     ).encode(
         x=alt.X('Task Info.Finish Time:T', axis=alt.Axis(title='Time')),
-        y=alt.Y('bytes:Q', axis=alt.Axis(title='Shuffle reads & writes (MB)')),
-        tooltip=['Task Info.Finish Time:T', 'bytes:Q']
+        y=alt.Y('bytes:Q', stack='center', title='MB shuffled'),
+        color=alt.Color('Stage ID:N', scale=alt.Scale(scheme='category20b'), legend=None),
+        tooltip=['Task Info.Finish Time:T', 'bytes:Q', 'Stage ID:N']
     )
 
 
