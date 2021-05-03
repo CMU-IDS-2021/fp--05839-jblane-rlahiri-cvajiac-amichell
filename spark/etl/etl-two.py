@@ -65,7 +65,7 @@ def get_words(book, word_re, stop_words):
     :return: list of words in the book
     """
     lines = book.split("\n")
-    words_in_book = []
+    words_in_book = {}
     for line in lines:
         tokens = line.split(" ")
         for token in tokens:
@@ -75,7 +75,10 @@ def get_words(book, word_re, stop_words):
                 word = token.lower()
                 if word in stop_words:
                     continue  # still not interested if it is a stop_word
-                words_in_book.append(word)
+                if word in words_in_book:
+                    words_in_book[word] += 1
+                else:
+                    words_in_book[word] = 1
             elif re.match(word_re, token) is None:
                 continue  # fails to match the regex
             else:
@@ -84,26 +87,29 @@ def get_words(book, word_re, stop_words):
                 if len(word) > 0:  # make sure the word is still valid
                     if word in stop_words:  # make sure the word should be counted
                         continue
-                    words_in_book.append(word)
-    return words_in_book
+                    if word in words_in_book:
+                        words_in_book[word] += 1
+                    else:
+                        words_in_book[word] = 1
+    return list(words_in_book.items())
 
 
 if __name__ == "__main__":
     # Input validation
     if len(sys.argv) != 5:
-        print("usage: wordcount-two-three.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
+        print("usage: etl-two.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
     # Get the arguments
     input_books_list = sys.argv[1]
     input_books_base_path = sys.argv[2]
     output_path = sys.argv[3]
     stop_words_file = sys.argv[4]
 
-    conf = pyspark.SparkConf().setAppName("WordCount-Optimization-Two-Three")
+    conf = pyspark.SparkConf().setAppName("ETL-Optimization-Two")
     conf.set("spark.default.parallelism", 16)
+    conf.set("spark.executor.memory", "10g")
     sc = pyspark.SparkContext(conf=conf)
 
     book_file_paths = open_book_names_list(input_books_base_path, input_books_list)
-    print("-----------------------------")
     book_file_names = sc.parallelize(book_file_paths)
 
     books = book_file_names.flatMap(get_book)
@@ -114,9 +120,47 @@ if __name__ == "__main__":
     # Get all of words we should not include as a set
     stop_words = open_stopwords(stop_words_file)
 
+    # Filter common and uncommon words
+    book_count = books.count()
+    book_upper_limit = int(book_count * 0.9)
+    book_lower_limit = int(book_count * 0.01)
     words = books.flatMap(lambda x: get_words(x, word_regex, stop_words))
-    word_counts = words.map(lambda x: (x, 1))\
-                       .reduceByKey(lambda x, y: x + y)
+    doc_frequency = words\
+        .map(lambda x: (x[0], 1))\
+        .reduceByKey(lambda x, y: x + y)
+    infrequent_words = doc_frequency\
+        .filter(lambda x: x[1] < book_lower_limit)\
+        .map(lambda x: x[0])
+    frequent_words = doc_frequency\
+        .filter(lambda x: x[1] > book_upper_limit)\
+        .map(lambda x: x[0])
+    uncommon_words = set(infrequent_words.collect())
+    common_words = set(frequent_words.collect())
+    filtered_words = words\
+        .filter(lambda x: x[0] not in uncommon_words)\
+        .filter(lambda x: x[0] not in common_words)
 
-    word_counts.saveAsTextFile(output_path)
+    # Tokenize all words (sort and dictionary)
+    dictionary = filtered_words\
+        .sortByKey()\
+        .map(lambda x: x[0])\
+        .distinct()\
+        .zipWithIndex()
+    dictionary.saveAsTextFile("dictionary")
+    dictionary_map = dictionary.collectAsMap()
+    tokenized_words = filtered_words\
+        .map(lambda x: (dictionary_map[x[0]], x[1]))
+
+    # Term Frequency, Document Frequency
+    filtered_term_frequency = tokenized_words\
+        .reduceByKey(lambda x, y: x + y)
+    filtered_doc_frequency = tokenized_words\
+        .map(lambda x: (x[0], 1))\
+        .reduceByKey(lambda x, y: x + y)
+    tf_df = filtered_term_frequency\
+        .join(filtered_doc_frequency)\
+        .map(lambda x: f"{x[0]}\t{x[1][0]}\t{x[1][1]}")
+
+    # Write the term frequency and document frequency
+    tf_df.saveAsTextFile(output_path)
     sc.stop()

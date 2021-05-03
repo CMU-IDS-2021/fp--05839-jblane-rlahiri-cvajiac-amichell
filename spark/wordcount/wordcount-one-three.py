@@ -97,7 +97,7 @@ def get_words(book, word_re, stop_words):
 if __name__ == "__main__":
     # Input validation
     if len(sys.argv) != 5:
-        print("usage: wordcount-naive.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
+        print("usage: wordcount-one-three.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
     # Get the arguments
     input_books_list = sys.argv[1]
     input_books_base_path = sys.argv[2]
@@ -119,8 +119,7 @@ if __name__ == "__main__":
     stop_words = open_stopwords(stop_words_file)
 
     words = books.flatMap(lambda x: get_words(x, word_regex, stop_words))
-    word_counts = words.map(lambda x: (x, 1))\
-                       .reduceByKey(lambda x, y: x + y)
+    word_counts = words.reduceByKey(lambda x, y: x + y)
 
     word_counts.saveAsTextFile(output_path)
     sc.stop()
