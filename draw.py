@@ -39,22 +39,32 @@ def strip_chart(url: list, field: str) -> alt.Chart:
         :return altair histogram of counts '''
 
     field_s = field.split(':')[0] # split type from field name
-    return alt.Chart(url).transform_calculate(
-        time="replace(toString(datum['Submission Time']) + toString(datum['Completion Time']), 'null', '')"
-    ).mark_tick(
-        binSpacing=0,
-        thickness=6
-    ).encode(
-        x=alt.X('time:T', axis=alt.Axis(labelAngle=-45)),
-        y=alt.Y(field, scale=alt.Scale(type='log'), axis=alt.Axis(grid=False)),
-        color=alt.Color('count({}):Q'.format(field_s), scale=alt.Scale(type='sqrt')),
-        tooltip=['time:T']
-    ).properties(
-        width=600,
-        height=300
-    ).transform_filter(
-        (alt.datum.Event == 'SparkListenerJobStart') | (alt.datum.Event == 'SparkListenerJobEnd')
-    )
+
+    specs = [
+        ('SparkListenerStageSubmitted', "datum['Stage Info']['Submission Time']"),
+        ('SparkListenerStageCompleted', "datum['Stage Info']['Completion Time']"),
+        ('SparkListenerTaskStart', "datum['Task Info']['Launch Time']"),
+        ('SparkListenerTaskEnd', "datum['Task Info']['Finish Time']"),
+        ('SparkListenerApplicationStart', "datum['Timestamp']"),
+        ('SparkListenerApplicationEnd', "datum['Timestamp']"),
+        ('SparkListenerJobStart', "datum['Submission Time']"),
+        ('SparkListenerJobEnd', "datum['Completion Time']"),
+    ]
+
+    return alt.layer(*[alt.Chart(url).transform_filter(
+        alt.datum.Event == event
+        ).transform_calculate(
+            time=time_s
+        ).mark_tick(
+            binSpacing=0,
+            thickness=6
+        ).encode(
+            x=alt.X('time:T', axis=alt.Axis(labelAngle=-45)),
+            y=alt.Y(field, scale=alt.Scale(type='log'), axis=alt.Axis(grid=False)),
+            color=alt.Color('count({}):Q'.format(field_s), scale=alt.Scale(type='sqrt')),
+            tooltip=['time:T', 'count()']
+        )
+    for event, time_s in specs])
 
 
 def job_times(url: str) -> alt.Chart:

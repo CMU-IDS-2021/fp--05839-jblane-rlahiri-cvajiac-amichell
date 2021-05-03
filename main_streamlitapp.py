@@ -395,7 +395,7 @@ class interface:
  		* Your plots will appear below
 		""")
 
-		st.sidebar.markdown("## Select Optimization")
+		st.sidebar.markdown("## Select Plots to Show")
 		#set_png_as_page_bg('apache-spark1.jpg')
 
 		#st.sidebar.markdown('#### Q-tranform plot')
@@ -458,15 +458,7 @@ class interface:
 				st.write("Implement Optimization 3 on Data Set")
 	  
 		st.header('Task Overview: What does the job look like?')
-		with st.beta_expander('Click Here to View the Task Graph:'):
-			st.write('Task Graph: what are the job dependencies?')
-			st.altair_chart(draw.job_dag(dag, filename_strip), use_container_width=True)
-		st.write()
-		#col1, _, col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1, 1, 0.1])
 		col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1])
-		#with col1:
-		#	st.write('Task Graph: what are the job dependencies?')
-		#	st.altair_chart(draw.job_dag(dag, filename_strip), use_container_width=True)
 
 		with col2:
 			st.write('Breakdown of events: What is Spark doing?')
