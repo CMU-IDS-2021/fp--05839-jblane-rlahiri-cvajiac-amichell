@@ -97,15 +97,16 @@ def get_words(book, word_re, stop_words):
 if __name__ == "__main__":
     # Input validation
     if len(sys.argv) != 5:
-        print("usage: etl-base.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
+        print("usage: etl-one-two.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
     # Get the arguments
     input_books_list = sys.argv[1]
     input_books_base_path = sys.argv[2]
     output_path = sys.argv[3]
     stop_words_file = sys.argv[4]
 
-    conf = pyspark.SparkConf().setAppName("ETL-Naive")
+    conf = pyspark.SparkConf().setAppName("ETL-Optimizations-One-Two")
     conf.set("spark.default.parallelism", 16)
+    conf.set("spark.executor.memory", "10g")
     sc = pyspark.SparkContext(conf=conf)
 
     book_file_paths = open_book_names_list(input_books_base_path, input_books_list)
@@ -127,17 +128,12 @@ if __name__ == "__main__":
     doc_frequency = words\
         .map(lambda x: (x[0], 1))\
         .reduceByKey(lambda x, y: x + y)
-    infrequent_words = doc_frequency\
-        .filter(lambda x: x[1] < book_lower_limit)\
-        .map(lambda x: x[0])
-    frequent_words = doc_frequency\
-        .filter(lambda x: x[1] > book_upper_limit)\
-        .map(lambda x: x[0])
-    uncommon_words = set(infrequent_words.collect())
-    common_words = set(frequent_words.collect())
-    filtered_words = words\
-        .filter(lambda x: x[0] not in uncommon_words)\
-        .filter(lambda x: x[0] not in common_words)
+    words_to_filter = words \
+        .filter(lambda x: book_lower_limit < x[1] < book_upper_limit)
+    words_to_filter_set = set(words_to_filter.collect())
+    filtered_words = words \
+        .filter(lambda x: x[0] not in words_to_filter_set)
+
 
     # Tokenize all words (sort and dictionary)
     dictionary = filtered_words\
@@ -147,7 +143,7 @@ if __name__ == "__main__":
         .zipWithIndex()
     dictionary.saveAsTextFile("dictionary")
     dictionary_map = dictionary.collectAsMap()
-    tokenized_words = filtered_words\
+    tokenized_words = words\
         .map(lambda x: (dictionary_map[x[0]], x[1]))
 
     # Term Frequency, Document Frequency

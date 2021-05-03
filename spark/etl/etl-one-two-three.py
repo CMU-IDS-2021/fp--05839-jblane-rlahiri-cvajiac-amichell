@@ -97,15 +97,16 @@ def get_words(book, word_re, stop_words):
 if __name__ == "__main__":
     # Input validation
     if len(sys.argv) != 5:
-        print("usage: etl-base.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
+        print("usage: etl-one-two-three.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
     # Get the arguments
     input_books_list = sys.argv[1]
     input_books_base_path = sys.argv[2]
     output_path = sys.argv[3]
     stop_words_file = sys.argv[4]
 
-    conf = pyspark.SparkConf().setAppName("ETL-Naive")
+    conf = pyspark.SparkConf().setAppName("ETL-Optimizations-One-Two-Three")
     conf.set("spark.default.parallelism", 16)
+    conf.set("spark.executor.memory", "10g")
     sc = pyspark.SparkContext(conf=conf)
 
     book_file_paths = open_book_names_list(input_books_base_path, input_books_list)
@@ -123,21 +124,13 @@ if __name__ == "__main__":
     book_count = books.count()
     book_upper_limit = int(book_count * 0.9)
     book_lower_limit = int(book_count * 0.01)
-    words = books.flatMap(lambda x: get_words(x, word_regex, stop_words))
-    doc_frequency = words\
-        .map(lambda x: (x[0], 1))\
-        .reduceByKey(lambda x, y: x + y)
-    infrequent_words = doc_frequency\
-        .filter(lambda x: x[1] < book_lower_limit)\
-        .map(lambda x: x[0])
-    frequent_words = doc_frequency\
-        .filter(lambda x: x[1] > book_upper_limit)\
-        .map(lambda x: x[0])
-    uncommon_words = set(infrequent_words.collect())
-    common_words = set(frequent_words.collect())
-    filtered_words = words\
-        .filter(lambda x: x[0] not in uncommon_words)\
-        .filter(lambda x: x[0] not in common_words)
+    words = books\
+        .flatMap(lambda x: get_words(x, word_regex, stop_words))\
+        .map(lambda x: (x[0], (x[1], 1)))
+    frequencies = words\
+        .reduceByKey(lambda x, y: (x[0] + y[0], x[1] + y[1]))
+    filtered_words = frequencies \
+        .filter(lambda x: book_lower_limit < x[1][1] < book_upper_limit)
 
     # Tokenize all words (sort and dictionary)
     dictionary = filtered_words\
@@ -151,13 +144,7 @@ if __name__ == "__main__":
         .map(lambda x: (dictionary_map[x[0]], x[1]))
 
     # Term Frequency, Document Frequency
-    filtered_term_frequency = tokenized_words\
-        .reduceByKey(lambda x, y: x + y)
-    filtered_doc_frequency = tokenized_words\
-        .map(lambda x: (x[0], 1))\
-        .reduceByKey(lambda x, y: x + y)
-    tf_df = filtered_term_frequency\
-        .join(filtered_doc_frequency)\
+    tf_df = tokenized_words\
         .map(lambda x: f"{x[0]}\t{x[1][0]}\t{x[1][1]}")
 
     # Write the term frequency and document frequency

@@ -97,15 +97,16 @@ def get_words(book, word_re, stop_words):
 if __name__ == "__main__":
     # Input validation
     if len(sys.argv) != 5:
-        print("usage: etl-base.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
+        print("usage: etl-two.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
     # Get the arguments
     input_books_list = sys.argv[1]
     input_books_base_path = sys.argv[2]
     output_path = sys.argv[3]
     stop_words_file = sys.argv[4]
 
-    conf = pyspark.SparkConf().setAppName("ETL-Naive")
+    conf = pyspark.SparkConf().setAppName("ETL-Optimization-Two")
     conf.set("spark.default.parallelism", 16)
+    conf.set("spark.executor.memory", "10g")
     sc = pyspark.SparkContext(conf=conf)
 
     book_file_paths = open_book_names_list(input_books_base_path, input_books_list)

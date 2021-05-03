@@ -120,8 +120,7 @@ if __name__ == "__main__":
     stop_words = open_stopwords(stop_words_file)
 
     words = books.flatMap(lambda x: get_words(x, word_regex, stop_words))
-    word_counts = words.map(lambda x: (x, 1))\
-                       .reduceByKey(lambda x, y: x + y)
+    word_counts = words.reduceByKey(lambda x, y: x + y)
 
     word_counts.saveAsTextFile(output_path)
     sc.stop()
