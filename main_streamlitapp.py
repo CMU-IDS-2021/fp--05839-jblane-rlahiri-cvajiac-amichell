@@ -458,10 +458,14 @@ class interface:
 				st.write("Implement Optimization 3 on Data Set")
 	  
 		st.header('Task Overview: What does the job look like?')
-		col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1])
+		col1, _, col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1, 1, 0.1])
+
+		with col1:
+			st.write('Breakdown of events: What is Spark doing?')
+			st.altair_chart(draw.count_histogram(url, 'Event:N'), use_container_width=True)
 
 		with col2:
-			st.write('Breakdown of events: What is Spark doing?')
+			st.write('Breakdown of events: What is Spark doing over time?')
 			st.altair_chart(draw.strip_chart(url, 'Event:N'), use_container_width=True)
 
 		with col3:
@@ -478,13 +482,13 @@ class interface:
 		if suffle_read_button=="Yes":
 			col2.header("Shuffle Read and Write")
 			col2.altair_chart(draw.shuffle_read_write(url), use_container_width=True)
-		if Dataio_button=="Yes":
-				col3.header("Data input and output")
-				col3.write(plot)
-		st.write("** Display Data after Optimizations**")
-		optimized=st.radio("",("Yes","No"))
-		if optimized=="Yes":
-				st.write(plot.properties(width=600,height=300))
+		#if Dataio_button=="Yes":
+		#		col3.header("Data input and output")
+		#		col3.write(utils.table_stats(url))
+		#st.write("** Display Data after Optimizations**")
+		#optimized=st.radio("",("Yes","No"))
+		#if optimized=="Yes":
+		#		st.write(plot.properties(width=600,height=300))
 
 
 

@@ -35,7 +35,7 @@ def strip_chart(url: list, field: str) -> alt.Chart:
     ''' produce histogram displaying counts of a particular field
 
         :param url: online url or path to data
-        :param field: field to count (with type specified) 
+        :param field: field to count (with ty over timepe specified) 
         :return altair histogram of counts '''
 
     field_s = field.split(':')[0] # split type from field name
@@ -57,12 +57,15 @@ def strip_chart(url: list, field: str) -> alt.Chart:
             time=time_s
         ).mark_tick(
             binSpacing=0,
-            thickness=6
+            #thickness=6
         ).encode(
-            x=alt.X('time:T', axis=alt.Axis(labelAngle=-45)),
+            x=alt.X('time:T', axis=alt.Axis(labelAngle=-45, grid=False)),
             y=alt.Y(field, scale=alt.Scale(type='log'), axis=alt.Axis(grid=False)),
             color=alt.Color('count({}):Q'.format(field_s), scale=alt.Scale(type='sqrt')),
             tooltip=['time:T', 'count()']
+        ).properties(
+            height=300,
+            width=700
         )
     for event, time_s in specs])
 
@@ -124,7 +127,8 @@ def data_spill(url: str) -> alt.Chart:
         bytes="datum['Task Metrics']['Disk Bytes Spilled'] / 1000000"
     ).encode(
         x=alt.X('Task Info.Finish Time:T', axis=alt.Axis(title='Time')),
-        y=alt.Y('bytes:Q', axis=alt.Axis(title='MB spilled to mem & disk'))
+        y=alt.Y('bytes:Q', axis=alt.Axis(title='MB spilled to mem & disk')),
+        tooltip=['Task Info.Finish Time:T', 'bytes:Q']
     )
 
 
@@ -142,7 +146,8 @@ def shuffle_read_write(url: str) -> alt.Chart:
         bytes="({}+{}) / 1000000".format(datum_s('Read', 'Local Bytes Read'), datum_s('Write', 'Shuffle Bytes Written'))
     ).encode(
         x=alt.X('Task Info.Finish Time:T', axis=alt.Axis(title='Time')),
-        y=alt.Y('bytes:Q', axis=alt.Axis(title='Shuffle reads & writes (MB)'))
+        y=alt.Y('bytes:Q', axis=alt.Axis(title='Shuffle reads & writes (MB)')),
+        tooltip=['Task Info.Finish Time:T', 'bytes:Q']
     )
 
 
