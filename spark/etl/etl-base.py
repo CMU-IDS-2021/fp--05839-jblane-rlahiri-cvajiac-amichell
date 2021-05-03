@@ -69,37 +69,28 @@ def get_words(book, word_re, stop_words):
     for line in lines:
         tokens = line.split(" ")
         for token in tokens:
-            if not token.isascii():
-                continue  # we aren't interested in non-ascii
-            if token.isalpha():  # token is only made up of A-Z or a-z characters
-                word = token.lower()
-                if word in stop_words:
-                    continue  # still not interested if it is a stop_word
-                words_in_book.append(word)
-            elif re.match(word_re, token) is None:
+            if re.match(word_re, token) is None:
                 continue  # fails to match the regex
             else:
                 cleaned_token = token.strip('\'').strip('-').strip('"').lower()
                 word = cleaned_token.strip('\'').strip('-').strip('"')
                 if len(word) > 0:  # make sure the word is still valid
-                    if word in stop_words:  # make sure the word should be counted
-                        continue
-                    words_in_book.append(word)
+                    if word not in stop_words:  # make sure the word should be counted
+                        words_in_book.append(word)
     return words_in_book
 
 
 if __name__ == "__main__":
     # Input validation
     if len(sys.argv) != 5:
-        print("usage: wordcount-two-three.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
+        print("usage: etl-base.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
     # Get the arguments
     input_books_list = sys.argv[1]
     input_books_base_path = sys.argv[2]
     output_path = sys.argv[3]
     stop_words_file = sys.argv[4]
 
-    conf = pyspark.SparkConf().setAppName("WordCount-Optimization-Two-Three")
-    conf.set("spark.default.parallelism", 16)
+    conf = pyspark.SparkConf().setAppName("ETL-Naive")
     sc = pyspark.SparkContext(conf=conf)
 
     book_file_paths = open_book_names_list(input_books_base_path, input_books_list)
@@ -113,6 +104,10 @@ if __name__ == "__main__":
 
     # Get all of words we should not include as a set
     stop_words = open_stopwords(stop_words_file)
+
+    # Filter common and uncommon words
+    # Tokenize all words (in order)
+    # Term Frequency, Inverse Document Frequency
 
     words = books.flatMap(lambda x: get_words(x, word_regex, stop_words))
     word_counts = words.map(lambda x: (x, 1))\

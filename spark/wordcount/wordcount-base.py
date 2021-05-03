@@ -83,7 +83,7 @@ def get_words(book, word_re, stop_words):
 if __name__ == "__main__":
     # Input validation
     if len(sys.argv) != 5:
-        print("usage: wordcount-naive.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
+        print("usage: wordcount-base.py <input_books_list>.txt <books_base_path> <output_path> <stop_words_file>")
     # Get the arguments
     input_books_list = sys.argv[1]
     input_books_base_path = sys.argv[2]
