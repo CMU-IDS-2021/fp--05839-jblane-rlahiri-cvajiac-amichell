@@ -80,14 +80,11 @@ def job_times(url: str) -> alt.Chart:
         x=alt.X('time:T', axis=alt.Axis(grid=False)),
         y=alt.Y('count()', axis=alt.Axis(grid=False)),
         row=alt.Row('Job ID:O'),
-        tooltip = ['time:T', 'count()']
     ).properties(
         width=600,
         height=30
     ).transform_filter(
         (alt.datum.Event == 'SparkListenerJobStart') | (alt.datum.Event == 'SparkListenerJobEnd')
-    ).configure_facet(
-        spacing=1
     )
 
 
@@ -125,8 +122,8 @@ def data_spill(url: str) -> alt.Chart:
     ).transform_calculate(
         bytes="datum['Task Metrics']['Disk Bytes Spilled'] / 1000000"
     ).encode(
-        x=alt.X('Task Info.Finish Time:T', axis=alt.Axis(title='Time')),
-        y=alt.Y('bytes:Q', stack='center', axis=alt.Axis(title='MB spilled to mem & disk')),
+        x=alt.X('Task Info.Finish Time:T', axis=alt.Axis(title='Time', grid=False)),
+        y=alt.Y('bytes:Q', stack='center', axis=alt.Axis(title='MB spilled to mem & disk', grid=False)),
         color=alt.Color('Stage ID:N', scale=alt.Scale(scheme='category20b'), legend=None),
         tooltip=['Task Info.Finish Time:T', 'bytes:Q']
     )
@@ -144,8 +141,8 @@ def shuffle_read_write(url: str) -> alt.Chart:
     ).transform_calculate(
         bytes="({}+{}) / 1000000".format(datum_s('Read', 'Local Bytes Read'), datum_s('Write', 'Shuffle Bytes Written'))
     ).encode(
-        x=alt.X('Task Info.Finish Time:T', axis=alt.Axis(title='Time')),
-        y=alt.Y('bytes:Q', stack='center', title='MB shuffled'),
+        x=alt.X('Task Info.Finish Time:T', axis=alt.Axis(title='Time', grid=False)),
+        y=alt.Y('bytes:Q', stack='center', title='MB shuffled', axis=alt.Axis(grid=False)),
         color=alt.Color('Stage ID:N', scale=alt.Scale(scheme='category20b'), legend=None),
         tooltip=['Task Info.Finish Time:T', 'bytes:Q', 'Stage ID:N']
     )
@@ -159,15 +156,15 @@ def job_duration(url: str) -> alt.Chart:
     return alt.Chart(url).transform_calculate(
         time="replace(toString(datum['Submission Time']) + toString(datum['Completion Time']), 'null', '')"
     ).mark_area().encode(
-        x=alt.X('time:T'),
-        y=alt.Y('count()'),
+        x=alt.X('time:T', axis=alt.Axis(grid=False)),
+        y=alt.Y('count()', axis=alt.Axis(grid=False, tickCount=0), title=None),
         row=alt.Row('Job ID:O'),
         tooltip = ['time:T', 'count()']
     ).properties(
         width=600,
-        height=30
+        height=38
     ).transform_filter(
         (alt.datum.Event == 'SparkListenerJobStart') | (alt.datum.Event == 'SparkListenerJobEnd')
     ).configure_facet(
-        spacing=0
+        spacing=1
     )

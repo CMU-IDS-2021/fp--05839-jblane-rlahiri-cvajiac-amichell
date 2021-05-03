@@ -438,22 +438,15 @@ class interface:
 		
 
 
-		col1, _, col2, _, = st.beta_columns([1, 0.1, 1, 0.1])
+		charts = []
 		if data_spill_button=="Yes":
-			col1.header("Data Spill to Memory and Disk")
-			col1.altair_chart(draw.data_spill(url), use_container_width=True)
+			st.header("Data Spill to Memory and Disk")
+			st.altair_chart(draw.data_spill(url), use_container_width=True)
+			#charts.append(draw.data_spill(url))
 
 		if suffle_read_button=="Yes":
-			col2.header("Shuffle Read and Write")
-			col2.altair_chart(draw.shuffle_read_write(url), use_container_width=True)
-		#if Dataio_button=="Yes":
-		#		col3.header("Data input and output")
-		#		col3.write(draw.tasks_over_time(url))
-		#st.write("** Display Data after Optimizations**")
-		#optimized=st.radio("",("Yes","No"))
-		#if optimized=="Yes":
-		#		st.write(plot.properties(width=600,height=300))
-
+			st.header("Shuffle Read and Write")
+			st.altair_chart(draw.shuffle_read_write(url), use_container_width=True)
 
 
 def main():
