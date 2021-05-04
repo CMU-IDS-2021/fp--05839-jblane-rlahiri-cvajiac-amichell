@@ -355,7 +355,7 @@ class Interface:
         filename = utils.get_filename(task, is_opt_one, is_opt_two, is_opt_three)
         task_s = "wordcount" if task == "Word Count" else "etl"
         url = 'https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/' \
-               'blob/main/data/{}/{}-sanitized.json'.format(task_s, filename)
+               'blob/main/data/{}-sanitized.json'.format(filename)
         st.write(url)
 
         with st.beta_expander('Click Here to Display the Code!!!'):
