@@ -382,13 +382,7 @@ class interface:
 		with open('./interfacestyle.css') as f:
 				st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 		
-		source = data.movies.url
-		filename = 'data/spark_ml_job.json'
-		filename_strip = utils.extract_filename(filename)
-		url = utils.prep_data(filename)
-		dag = utils.json_to_nx('')
 
-		#st.set_page_config(layout="wide")
 		st.title("⭐A Better Spark User Interface⭐")
 		st.markdown("""
  		* Use the menu at left to select data and set plot parameters
@@ -399,11 +393,7 @@ class interface:
 
 		task = st.selectbox(
 				"Which problem do you want to Visualize?", ["Word Count","Extract, Transform, Load (ETL)"])
-		plot=alt.Chart(source).mark_bar().encode(
-			alt.X("IMDB_Rating:Q", title='Time'),
-			y='count()',
-		).properties(width=400,
-			height=200)
+
 		data_spill_button=st.sidebar.radio("Show data spill to memory and disk",("Yes","No"))
 
 		suffle_read_button=st.sidebar.radio("Show shuffle read and write quantities",("Yes","No"))
@@ -415,9 +405,12 @@ class interface:
 		is_opt_two =	st.checkbox(opt_text[1])
 		is_opt_three =	st.checkbox(opt_text[2])
 	
+		filename = utils.get_filename(task, is_opt_one, is_opt_two, is_opt_three)
+		filename_strip = utils.extract_filename(filename)
+		url = utils.prep_data('data/{}.json'.format(filename), task)
 
 		with st.beta_expander('Click Here to Display the Code!!!'):
-			with open(utils.get_code_filename(task, is_opt_one, is_opt_two, is_opt_three), 'r') as f:
+			with open('spark/{}.py'.format(filename), 'r') as f:
 				code = ''.join(line for line in f)
 			st.code(code)
 		

@@ -18,20 +18,22 @@ ETL_OPTS = [
 
 
 @st.cache(show_spinner=False)
-def prep_data(filename: str) -> str:
+def prep_data(filename: str, task: str) -> str:
 	''' read JSON data from jobs -- each line is valid JSON object
     
         :param filename: path to job data
         :return string path for cleansed data'''
-	with open(filename) as f:
+
+	task_s = 'wordcount' if task == 'Word Count' else 'etl'
+	with open(filename.replace('-', '_')) as f:
 		data = [json.loads(line) for line in f]
 
 	url = '{}-sanitized.json'.format(os.path.splitext(filename)[0])
-	#with open(url, 'w') as f:
-	#	json.dump(data, f)
+	with open(url, 'w') as f:
+		json.dump(data, f)
 
-	base = 'https://raw.githubusercontent.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/main/data/{}-sanitized.json'
-	return base.format(extract_filename(filename))
+	base = 'https://raw.githubusercontent.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/main/data/{}/{}-sanitized.json'
+	return base.format(task_s, extract_filename(filename))
 
 
 def json_to_nx(filename: str) -> nx.Graph:
@@ -52,7 +54,7 @@ def extract_filename(filename: str) -> str:
 	return os.path.splitext(os.path.basename(filename))[0]
 
 
-def get_code_filename(job: str, is_one: bool, is_two: bool, is_three: bool) -> str:
+def get_filename(job: str, is_one: bool, is_two: bool, is_three: bool) -> str:
 	''' get filename of source code based on filename and checked optimizations
 
 		:param job:			name of job (Word Count or ETL)
@@ -75,4 +77,4 @@ def get_code_filename(job: str, is_one: bool, is_two: bool, is_three: bool) -> s
 	if is_three:
 		suffix.append('three')
 
-	return 'spark/{}/{}.py'.format(task_s, '-'.join(suffix))
+	return '{}/{}'.format(task_s, '-'.join(suffix))
