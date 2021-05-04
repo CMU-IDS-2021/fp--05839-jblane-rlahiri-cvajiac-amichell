@@ -325,6 +325,8 @@ class Home:
                     "to see how we created more useful visualizations." )
 
 
+COLOR_STR = '#f2f5ff'
+
 class Interface:
 
     def write(self):
@@ -366,23 +368,23 @@ class Interface:
 
         with col1:
             col1.subheader('Number of Events Initiated')
-            col1.write(draw.count_histogram(url, 'Event:N').configure(background='#cadce6'))
+            col1.write(draw.count_histogram(url, 'Event:N').configure(background=COLOR_STR))
 
         with col2:
             col2.subheader('Event Initiation Over Time')
-            col2.write(draw.strip_chart(url, 'Event:N').configure(background='#cadce6'))
+            col2.write(draw.strip_chart(url, 'Event:N').configure(background=COLOR_STR))
 
         with col3:
             col3.subheader('How long does each job take?')
-            col3.write(draw.job_duration(url).configure(background='#cadce6'))
+            col3.write(draw.job_duration(url).configure(background=COLOR_STR))
 
         if data_spill_button == "Yes":
             st.header("Data Spill to Memory and Disk")
-            st.altair_chart(draw.data_spill(url).configure(background='#cadce6'), use_container_width=True)
+            st.altair_chart(draw.data_spill(url).configure(background=COLOR_STR), use_container_width=True)
 
         if suffle_read_button == "Yes":
             st.header("Shuffle Read and Write")
-            st.altair_chart(draw.shuffle_read_write(url).configure(background='#cadce6'), use_container_width=True)
+            st.altair_chart(draw.shuffle_read_write(url).configure(background=COLOR_STR), use_container_width=True)
 
 
 def main():

@@ -67,7 +67,7 @@ def strip_chart(url: str, field: str) -> alt.Chart:
         ).encode(
             x=alt.X('time:T', axis=alt.Axis(labelAngle=-45, grid=False)),
             y=alt.Y(field, scale=alt.Scale(type='log'), axis=alt.Axis(grid=False)),
-            color=alt.Color('count({}):Q'.format(field_s), scale=alt.Scale(type='sqrt')),
+            color=alt.Color('count({}):Q'.format(field_s), scale=alt.Scale(scheme='goldred', type='sqrt')),
             tooltip=['time:T', 'count()']
         ).properties(
             height=300,
