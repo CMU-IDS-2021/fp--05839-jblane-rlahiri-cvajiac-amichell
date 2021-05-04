@@ -200,13 +200,13 @@ class home1:
 						
 							<!-- Full-width images with number and caption text -->
 							<div class="mySlides fade">
-								<div class="numbertext">1 / 3</div>
+								<div class="numbertext">1 / 2</div>
 								<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/intro001.png?raw=true" style="width:100%">
 								<!--<div class="text">Caption Text</div>-->
 							</div>
 						
 							<div class="mySlides fade">
-								<div class="numbertext">2 / 3</div>
+								<div class="numbertext">2 / 2</div>
 								<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/intro003.png?raw=true" style="width:100%">
 								<!--<div class="text">Caption Two</div>-->
 							</div>
