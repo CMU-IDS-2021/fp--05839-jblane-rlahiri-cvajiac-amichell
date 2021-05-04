@@ -23,16 +23,16 @@ def prep_data(filename: str, task: str) -> str:
         :param filename: path to job data
         :return string path for cleansed data"""
     task_s = 'wordcount' if task == 'Word Count' else 'etl'
-    with open(filename.replace('-', '_')) as f:
+    '''with open(filename.replace('-', '_')) as f:
         data = [json.loads(line) for line in f]
 
     url = '{}-sanitized.json'.format(os.path.splitext(filename)[0])
     with open(url, 'w') as f:
-        json.dump(data, f)
+        json.dump(data, f)'''
 
     base = 'https://raw.githubusercontent.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/' \
-           'main/data/{}/{}-sanitized.json'
-    return base.format(task_s, filename)
+           'main/data/{}-sanitized.json'
+    return base.format(filename)
 
 
 def json_to_nx(filename: str) -> nx.Graph:
