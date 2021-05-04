@@ -95,32 +95,6 @@ def job_times(url: str) -> alt.Chart:
     )
 
 
-def job_dag(graph: nx.Graph, filename: str) -> alt.Chart:
-    """ draw task graph in altair
-
-        :param filename: the filename describing the job dag
-        :param graph: task graph
-        :return altair chart of task graph"""
-
-    pkl_filename = 'data/{}-pos.pkl'.format(filename)
-    if os.path.exists(pkl_filename):
-        with open(pkl_filename, 'rb') as f:
-            pos = pkl.load(f)
-    else:
-        pos = nx.drawing.nx_pydot.graphviz_layout(graph, prog='dot')
-        with open(pkl_filename, 'wb') as f:
-            pkl.dump(pos, f)
-    flipped_pos = {node: (-y, x) for (node, (x, y)) in pos.items()}
-
-    return nxa.draw_networkx(
-        graph,
-        pos=flipped_pos,
-    ).properties(
-        width=800,
-        height=300
-    )
-
-
 def data_spill(url: str) -> alt.Chart:
     """ draw data spill chart in altair
 

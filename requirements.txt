@@ -2,5 +2,4 @@ altair
 networkx
 pandas
 streamlit
-nx_altair
 Pillow
