@@ -357,7 +357,6 @@ class Interface:
         #url = 'https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/' \
         #       'blob/main/data/{}-sanitized.json'.format(filename)
         url = utils.prep_data(filename, task)
-        st.write(url)
 
         with st.beta_expander('Click Here to Display the Code!!!'):
             with open('spark/{}.py'.format(filename), 'r') as f:
