@@ -30,8 +30,9 @@ def prep_data(filename: str, task: str) -> str:
     with open(url, 'w') as f:
         json.dump(data, f)
 
-    base = 'https://raw.githubusercontent.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/main/data/{}/{}-sanitized.json'
-    return base.format(task_s, extract_filename(filename))
+    base = 'https://raw.githubusercontent.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/' \
+           'main/data/{}/{}-sanitized.json'
+    return base.format(task_s, filename)
 
 
 def json_to_nx(filename: str) -> nx.Graph:
