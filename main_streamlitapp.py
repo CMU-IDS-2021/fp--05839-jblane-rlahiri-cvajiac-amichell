@@ -354,10 +354,7 @@ class Interface:
 
         filename = utils.get_filename(task, is_opt_one, is_opt_two, is_opt_three)
         task_s = "wordcount" if task == "Word Count" else "etl"
-        #url = 'https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/' \
-        #       'blob/main/data/{}-sanitized.json'.format(filename)
         url = utils.prep_data(filename, task)
-        st.write(url)
 
         with st.beta_expander('Click Here to Display the Code!!!'):
             with open('spark/{}.py'.format(filename), 'r') as f:
@@ -365,19 +362,19 @@ class Interface:
             st.code(code)
 
         st.header('Task Overview: What does the job look like?')
-        col1, _, col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1, 1, 0.1])
+        col1, col2, col3 = st.beta_columns(3)
 
         with col1:
-            st.write('Breakdown of events: What is Spark doing?')
-            st.altair_chart(draw.count_histogram(url, 'Event:N'), use_container_width=True)
+            col1.subheader('Number of Events Initiated')
+            col1.write(draw.count_histogram(url, 'Event:N'))
 
         with col2:
-            st.write('Breakdown of events: What is Spark doing over time?')
-            st.altair_chart(draw.strip_chart(url, 'Event:N'), use_container_width=True)
+            col2.subheader('Event Initiation Over Time')
+            col2.write(draw.strip_chart(url, 'Event:N'))
 
         with col3:
-            st.write('How long does each job take?')
-            st.altair_chart(draw.job_duration(url), use_container_width=True)
+            col3.subheader('How long does each job take?')
+            col3.write(draw.job_duration(url))
 
         if data_spill_button == "Yes":
             st.header("Data Spill to Memory and Disk")

@@ -11,7 +11,7 @@ import os
 import pickle as pkl
 
 
-def count_histogram(url: list, field: str) -> alt.Chart:
+def count_histogram(url: str, field: str) -> alt.Chart:
     """ produce histogram displaying counts of a particular field
 
         :param url: online url or path to data
@@ -38,7 +38,7 @@ def count_histogram(url: list, field: str) -> alt.Chart:
     return bars + text
 
 
-def strip_chart(url: list, field: str) -> alt.Chart:
+def strip_chart(url: str, field: str) -> alt.Chart:
     """ produce strip chart displaying counts of a particular field
 
         :param url: online url or path to data
@@ -98,6 +98,7 @@ def job_times(url: str) -> alt.Chart:
 def job_dag(graph: nx.Graph, filename: str) -> alt.Chart:
     """ draw task graph in altair
 
+        :param filename: the filename describing the job dag
         :param graph: task graph
         :return altair chart of task graph"""
 
@@ -109,7 +110,7 @@ def job_dag(graph: nx.Graph, filename: str) -> alt.Chart:
         pos = nx.drawing.nx_pydot.graphviz_layout(graph, prog='dot')
         with open(pkl_filename, 'wb') as f:
             pkl.dump(pos, f)
-    flipped_pos = {node: (-y,x) for (node, (x,y)) in pos.items()}
+    flipped_pos = {node: (-y, x) for (node, (x, y)) in pos.items()}
 
     return nxa.draw_networkx(
         graph,
