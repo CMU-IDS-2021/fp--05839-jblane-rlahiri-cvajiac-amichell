@@ -394,10 +394,10 @@ class interface:
 		task = st.selectbox(
 				"Which problem do you want to Visualize?", ["Word Count","Extract, Transform, Load (ETL)"])
 
-		data_spill_button=st.sidebar.radio("Show data spill to memory and disk",("Yes","No"))
+		data_spill_button=st.sidebar.radio("Show data spill to memory and disk",("Yes","No"), 1)
 
 		suffle_read_button=st.sidebar.radio("Show shuffle read and write quantities",("Yes","No"))
-		Dataio_button=st.sidebar.radio("Show data input and output",("Yes","No"))
+		#Dataio_button=st.sidebar.radio("Show data input and output",("Yes","No"))
 		#row2_1, row2_2, row2_3, row2_4 = st.beta_columns((2,1,1,1))
 		st.write("** Please select a checkbox to implement one or more optimization**")
 		opt_text = utils.WC_OPTS if task == 'Word Count' else utils.ETL_OPTS

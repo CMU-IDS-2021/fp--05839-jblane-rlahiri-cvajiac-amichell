@@ -162,7 +162,7 @@ def job_duration(url: str) -> alt.Chart:
         tooltip = ['time:T', 'count()']
     ).properties(
         width=600,
-        height=38
+        height=25
     ).transform_filter(
         (alt.datum.Event == 'SparkListenerJobStart') | (alt.datum.Event == 'SparkListenerJobEnd')
     ).configure_facet(
