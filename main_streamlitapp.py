@@ -356,10 +356,10 @@ class Interface:
 		filename_strip = utils.extract_filename(filename)
 		url = utils.prep_data('data/{}.json'.format(filename), task)
 
-		with st.beta_expander('Click Here to Display the Code!!!'):
-			with open('spark/{}.py'.format(filename), 'r') as f:
-				code = ''.join(line for line in f)
-			st.code(code)
+		# with st.beta_expander('Click Here to Display the Code!!!'):
+		# 	with open('spark/{}.py'.format(filename), 'r') as f:
+		# 		code = ''.join(line for line in f)
+		# 	st.code(code)
 
 		st.header('Task Overview: What does the job look like?')
 		col1, _, col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1, 1, 0.1])
