@@ -356,6 +356,7 @@ class Interface:
         task_s = "wordcount" if task == "Word Count" else "etl"
         url = 'https://raw.githubusercontent.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/' \
                'main/data/{}/{}-sanitized.json'.format(task_s, filename)
+        st.write(url)
 
         with st.beta_expander('Click Here to Display the Code!!!'):
             with open('spark/{}.py'.format(filename), 'r') as f:
