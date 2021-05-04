@@ -366,23 +366,23 @@ class Interface:
 
         with col1:
             col1.subheader('Number of Events Initiated')
-            col1.write(draw.count_histogram(url, 'Event:N'))
+            col1.write(draw.count_histogram(url, 'Event:N').configure(background='#cadce6'))
 
         with col2:
             col2.subheader('Event Initiation Over Time')
-            col2.write(draw.strip_chart(url, 'Event:N'))
+            col2.write(draw.strip_chart(url, 'Event:N').configure(background='#cadce6'))
 
         with col3:
             col3.subheader('How long does each job take?')
-            col3.write(draw.job_duration(url))
+            col3.write(draw.job_duration(url).configure(background='#cadce6'))
 
         if data_spill_button == "Yes":
             st.header("Data Spill to Memory and Disk")
-            st.altair_chart(draw.data_spill(url), use_container_width=True)
+            st.altair_chart(draw.data_spill(url).configure(background='#cadce6'), use_container_width=True)
 
         if suffle_read_button == "Yes":
             st.header("Shuffle Read and Write")
-            st.altair_chart(draw.shuffle_read_write(url), use_container_width=True)
+            st.altair_chart(draw.shuffle_read_write(url).configure(background='#cadce6'), use_container_width=True)
 
 
 def main():
