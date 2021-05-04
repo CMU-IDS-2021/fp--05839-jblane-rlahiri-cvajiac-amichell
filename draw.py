@@ -39,7 +39,7 @@ def count_histogram(url: list, field: str) -> alt.Chart:
 
 
 def strip_chart(url: list, field: str) -> alt.Chart:
-    """ produce strip chart diplaying counts of a particular field
+    """ produce strip chart displaying counts of a particular field
 
         :param url: online url or path to data
         :param field: field to count (with ty over timepe specified)
@@ -73,7 +73,7 @@ def strip_chart(url: list, field: str) -> alt.Chart:
             height=300,
             width=600
         )
-    for event, time_s in specs])
+        for event, time_s in specs])
 
 
 def job_times(url: str) -> alt.Chart:

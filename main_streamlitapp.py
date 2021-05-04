@@ -7,7 +7,8 @@ proposing a new Spark User Interface with better encoded information regarding S
 
 import streamlit as st
 import streamlit.components.v1 as components
-import draw, utils
+import draw
+import utils
 from PIL import Image
 st.set_page_config(layout="wide")
 
