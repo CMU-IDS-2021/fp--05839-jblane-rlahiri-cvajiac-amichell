@@ -1,17 +1,24 @@
+"""
+Carnegie Mellon University - Interactive Data Science 05-839 Final Project
+
+draw.py contains useful utilities that help separate plot drawing functionality into other files.
+"""
+
 import altair as alt
 import networkx as nx
 import nx_altair as nxa
 import os
 import pickle as pkl
 
+
 def count_histogram(url: list, field: str) -> alt.Chart:
-    ''' produce histogram displaying counts of a particular field
+    """ produce histogram displaying counts of a particular field
 
         :param url: online url or path to data
-        :param field: field to count (with type specified) 
-        :return altair histogram of counts '''
+        :param field: field to count (with type specified)
+        :return altair histogram of counts """
 
-    field_s = field.split(':')[0] # split type from field name
+    field_s = field.split(':')[0]  # split type from field name
     bars = alt.Chart(url).mark_bar().encode(
         x=alt.X(field, axis=alt.Axis(labelAngle=-45)),
         y=alt.Y('count({}):Q'.format(field_s), scale=alt.Scale(type='log'), axis=alt.Axis(grid=False))
@@ -28,15 +35,15 @@ def count_histogram(url: list, field: str) -> alt.Chart:
         text='count(Event):Q'
     )
 
-    return (bars+text)
+    return bars + text
 
 
 def strip_chart(url: list, field: str) -> alt.Chart:
-    ''' produce strip chart diplaying counts of a particular field
+    """ produce strip chart diplaying counts of a particular field
 
         :param url: online url or path to data
-        :param field: field to count (with ty over timepe specified) 
-        :return altair strip chart of counts '''
+        :param field: field to count (with ty over timepe specified)
+        :return altair strip chart of counts """
 
     field_s = field.split(':')[0] # split type from field name
 
@@ -70,10 +77,10 @@ def strip_chart(url: list, field: str) -> alt.Chart:
 
 
 def job_times(url: str) -> alt.Chart:
-    ''' produce histogram displaying counts of a particular field
+    """ produce histogram displaying counts of a particular field
 
         :param url: online url or path to data
-        :return altair chart showing times, split by job id'''
+        :return altair chart showing times, split by job id"""
     return alt.Chart(url).transform_calculate(
         time="replace(toString(datum['Submission Time']) + toString(datum['Completion Time']), 'null', '')"
     ).mark_area().encode(
@@ -89,10 +96,10 @@ def job_times(url: str) -> alt.Chart:
 
 
 def job_dag(graph: nx.Graph, filename: str) -> alt.Chart:
-    ''' draw task graph in altair
+    """ draw task graph in altair
 
         :param graph: task graph
-        :return altair chart of task graph'''
+        :return altair chart of task graph"""
 
     pkl_filename = 'data/{}-pos.pkl'.format(filename)
     if os.path.exists(pkl_filename):
@@ -112,11 +119,12 @@ def job_dag(graph: nx.Graph, filename: str) -> alt.Chart:
         height=300
     )
 
+
 def data_spill(url: str) -> alt.Chart:
-    ''' draw data spill chart in altair
+    """ draw data spill chart in altair
 
         :param url: link to data
-        :return altair chart of data spill'''
+        :return altair chart of data spill"""
     return alt.Chart(url).mark_area().transform_filter(
         (alt.datum.Event == 'SparkListenerTaskEnd')
     ).transform_calculate(
@@ -130,10 +138,10 @@ def data_spill(url: str) -> alt.Chart:
 
 
 def shuffle_read_write(url: str) -> alt.Chart:
-    ''' draw shuffle read/write chart in altair
+    """ draw shuffle read/write chart in altair
 
         :param url: link to data
-        :return altair chart of shuffle reads/writes '''
+        :return altair chart of shuffle reads/writes """
     # makes transform_calc string nicer
     datum_s = lambda s1, s2: "datum['Task Metrics']['Shuffle {} Metrics']['{}']".format(s1, s2)
     return alt.Chart(url).mark_area().transform_filter(
@@ -149,17 +157,17 @@ def shuffle_read_write(url: str) -> alt.Chart:
 
 
 def job_duration(url: str) -> alt.Chart:
-    ''' draw job duration faceted chart in altair
+    """ draw job duration faceted chart in altair
 
         :param url: link to data
-        :return altair chart showing duration of each job '''
+        :return altair chart showing duration of each job """
     return alt.Chart(url).transform_calculate(
         time="replace(toString(datum['Submission Time']) + toString(datum['Completion Time']), 'null', '')"
     ).mark_area().encode(
         x=alt.X('time:T', axis=alt.Axis(grid=False)),
         y=alt.Y('count()', axis=alt.Axis(grid=False, tickCount=0), title=None),
         row=alt.Row('Job ID:O'),
-        tooltip = ['time:T', 'count()']
+        tooltip=['time:T', 'count()']
     ).properties(
         width=600,
         height=25

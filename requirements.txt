@@ -1,9 +1,6 @@
 altair
-awesome-streamlit
-graphviz
 networkx
-nx_altair
 pandas
-pydot
 streamlit
-vega_datasets
+
+Pillow
