@@ -207,15 +207,11 @@ class home1:
 						
 							<div class="mySlides fade">
 								<div class="numbertext">2 / 3</div>
-								<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/intro002.png?raw=true" style="width:100%">
+								<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/intro003.png?raw=true" style="width:100%">
 								<!--<div class="text">Caption Two</div>-->
 							</div>
 						
-							<div class="mySlides fade">
-								<div class="numbertext">3 / 3</div>
-								<img src="https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/intro003.png?raw=true" style="width:100%">
-								<!--<div class="text">Caption Three</div>-->
-							</div>
+
 						
 							<!-- Next and previous buttons -->
 							<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -363,6 +359,9 @@ class home1:
 								<li>time spent executing, shuffling, reading/writing data?</li>
 								<li>tabular format: difficult to <i>visualize</i> useful information
 								</ul>
+                        </br>     
+                        <p style="font-size:18px;font-family:verdana">
+                        In this visualization, we mitigate some of these visualization shortfalls.
 		
 				
 			</body>
