@@ -352,37 +352,37 @@ class Interface:
 		is_opt_two = st.checkbox(opt_text[1])
 		is_opt_three = st.checkbox(opt_text[2])
 
-		filename = utils.get_filename(task, is_opt_one, is_opt_two, is_opt_three)
-		filename_strip = utils.extract_filename(filename)
-		url = utils.prep_data('data/{}.json'.format(filename), task)
+		# filename = utils.get_filename(task, is_opt_one, is_opt_two, is_opt_three)
+		# filename_strip = utils.extract_filename(filename)
+		# url = utils.prep_data('data/{}.json'.format(filename), task)
 
 		# with st.beta_expander('Click Here to Display the Code!!!'):
 		# 	with open('spark/{}.py'.format(filename), 'r') as f:
 		# 		code = ''.join(line for line in f)
 		# 	st.code(code)
 
-		st.header('Task Overview: What does the job look like?')
-		col1, _, col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1, 1, 0.1])
-
-		with col1:
-			st.write('Breakdown of events: What is Spark doing?')
-			st.altair_chart(draw.count_histogram(url, 'Event:N'), use_container_width=True)
-
-		with col2:
-			st.write('Breakdown of events: What is Spark doing over time?')
-			st.altair_chart(draw.strip_chart(url, 'Event:N'), use_container_width=True)
-
-		with col3:
-			st.write('How long does each job take?')
-			st.altair_chart(draw.job_duration(url), use_container_width=True)
-
-		if data_spill_button == "Yes":
-			st.header("Data Spill to Memory and Disk")
-			st.altair_chart(draw.data_spill(url), use_container_width=True)
-
-		if suffle_read_button == "Yes":
-			st.header("Shuffle Read and Write")
-			st.altair_chart(draw.shuffle_read_write(url), use_container_width=True)
+		# st.header('Task Overview: What does the job look like?')
+		# col1, _, col2, _, col3, _ = st.beta_columns([1, 0.1, 1, 0.1, 1, 0.1])
+		#
+		# with col1:
+		# 	st.write('Breakdown of events: What is Spark doing?')
+		# 	st.altair_chart(draw.count_histogram(url, 'Event:N'), use_container_width=True)
+		#
+		# with col2:
+		# 	st.write('Breakdown of events: What is Spark doing over time?')
+		# 	st.altair_chart(draw.strip_chart(url, 'Event:N'), use_container_width=True)
+		#
+		# with col3:
+		# 	st.write('How long does each job take?')
+		# 	st.altair_chart(draw.job_duration(url), use_container_width=True)
+		#
+		# if data_spill_button == "Yes":
+		# 	st.header("Data Spill to Memory and Disk")
+		# 	st.altair_chart(draw.data_spill(url), use_container_width=True)
+		#
+		# if suffle_read_button == "Yes":
+		# 	st.header("Shuffle Read and Write")
+		# 	st.altair_chart(draw.shuffle_read_write(url), use_container_width=True)
 
 
 def main():

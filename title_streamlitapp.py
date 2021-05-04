@@ -5,12 +5,9 @@ Created on Thu Apr  8 10:30:52 2021
 
 @author: jblane
 """
-
 import streamlit as st
 import streamlit.components.v1 as components
-import pandas as pd
-import altair as alt
-from datetime import date
+
 
 def local_css(file_name):
     with open(file_name) as f:
