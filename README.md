@@ -10,7 +10,15 @@
 
 ## Work distribution
 
-Update towards the end of the project.
+Early in the planning process, the group met to decide on the topic for the project and what type of application would be created. The group then divided the responsibilities of the project and set milestones to meet based on the course assignment turn-in schedule. Each week, they met to assess the progress made on the project and to ask for any assistance if needed. Throughout the course of the project, though members of the team were assigned certain areas to focus on, each member participated in troubleshooting and providing ideas to help contribute to the overall completion of the project.
+
+Riddhiman
+
+Janice primarily worked on designing the homepage. This included deciding the overall design, selecting what content would be presented, and integrating fun html features to highlight some of the major points on the page.
+
+Andre
+
+Catalina
 
 ## Deliverables
 
