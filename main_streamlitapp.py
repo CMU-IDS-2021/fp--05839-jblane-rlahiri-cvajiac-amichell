@@ -368,15 +368,15 @@ class Interface:
 
         with col1:
             col1.subheader('Number of Events Initiated')
-            col1.write(draw.count_histogram(url, 'Event:N').configure(background=COLOR_STR))
+            col1.write(draw.count_histogram(url, 'Event:N').configure(background=COLOR_STR), use_container_width=True)
 
         with col2:
             col2.subheader('Event Initiation Over Time')
-            col2.write(draw.strip_chart(url, 'Event:N').configure(background=COLOR_STR))
+            col2.write(draw.strip_chart(url, 'Event:N').configure(background=COLOR_STR), use_container_width=True)
 
         with col3:
             col3.subheader('How long does each job take?')
-            col3.write(draw.job_duration(url).configure(background=COLOR_STR))
+            col3.write(draw.job_duration(url).configure(background=COLOR_STR), use_container_width=True)
 
         if data_spill_button == "Yes":
             st.header("Data Spill to Memory and Disk")
