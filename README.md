@@ -14,7 +14,7 @@ Early in the planning process, the group met to decide on the topic for the proj
 
 Riddhiman
 
-Janice primarily worked on designing the homepage. This included deciding the overall design, selecting what content would be presented, and integrating fun html features to highlight some of the major points on the page.
+Janice primarily worked on designing the homepage. This included deciding the overall design, selecting what content would be presented, and integrating fun html features to highlight some of the major points on the page, such as the expanders, the image gallery carousel in the second section, and the image hover feature in the third section.
 
 Andre
 
