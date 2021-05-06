@@ -22,6 +22,7 @@ def count_histogram(url: str, field: str) -> alt.Chart:
         x=alt.X(field, axis=alt.Axis(labelAngle=-45)),
         y=alt.Y('count({}):Q'.format(field_s), scale=alt.Scale(type='log'), axis=alt.Axis(grid=False))
     ).properties(
+        width=575,
         height=300
     )
 
@@ -68,7 +69,8 @@ def strip_chart(url: str, field: str) -> alt.Chart:
             color=alt.Color('count({}):Q'.format(field_s), scale=alt.Scale(scheme='goldred', type='sqrt')),
             tooltip=['time:T', 'count()']
         ).properties(
-            height=300,
+            width=575,
+            height=300
         )
         for event, time_s in specs])
 
@@ -85,6 +87,7 @@ def job_times(url: str) -> alt.Chart:
         y=alt.Y('count()', axis=alt.Axis(grid=False)),
         row=alt.Row('Job ID:O'),
     ).properties(
+        width=575,
         height=30
     ).transform_filter(
         (alt.datum.Event == 'SparkListenerJobStart') | (alt.datum.Event == 'SparkListenerJobEnd')
@@ -140,6 +143,7 @@ def job_duration(url: str) -> alt.Chart:
         row=alt.Row('Job ID:O'),
         tooltip=['time:T', 'count()']
     ).properties(
+        width=575,
         height=25
     ).transform_filter(
         (alt.datum.Event == 'SparkListenerJobStart') | (alt.datum.Event == 'SparkListenerJobEnd')

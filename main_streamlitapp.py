@@ -364,7 +364,7 @@ class Interface:
             st.code(code)
 
         st.header('Task Overview: What does the job look like?')
-        col1, col2, col3 = st.beta_columns(3)
+        col1, col2 = st.beta_columns(2)
 
         with col1:
             col1.subheader('Number of Events Initiated')
@@ -374,9 +374,15 @@ class Interface:
             col2.subheader('Event Initiation Over Time')
             col2.write(draw.strip_chart(url, 'Event:N').configure(background=COLOR_STR), use_container_width=True)
 
-        with col3:
-            col3.subheader('How long does each job take?')
-            col3.write(draw.job_duration(url).configure(background=COLOR_STR), use_container_width=True)
+        col1, col2 = st.beta_columns([2, 5])
+
+        with col1:
+            col1.subheader("Application Run-time")
+            st.markdown(f"# {utils.get_runtime(filename)} Seconds")
+
+        with col2:
+            col2.subheader('How long does each job take?')
+            col2.write(draw.job_duration(url).configure(background=COLOR_STR), use_container_width=True)
 
         if data_spill_button == "Yes":
             st.header("Data Spill to Memory and Disk")
