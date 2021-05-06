@@ -6,7 +6,6 @@ draw.py contains useful utilities that help separate plot drawing functionality 
 
 import altair as alt
 import networkx as nx
-import nx_altair as nxa
 import os
 import pickle as pkl
 
