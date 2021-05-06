@@ -60,7 +60,7 @@ class Home:
         my_expander2 = st.beta_expander("2) HOW DOES IT WORK?")
 
         with my_expander2:
-            st.markdown("""<p class="listFont"> Spark is capable of running different types of jobs. In this interface, we focus on three specific types (click side arrows):</p>
+            st.markdown("""<p class="listFont"> Spark is capable of running different types of jobs. In this interface, we focus on two specific types (click side arrows):</p>
                     """, unsafe_allow_html=True)
             components.html(
                 """
