@@ -1,6 +1,7 @@
 # CMU Interactive Data Science Final Project
 
 * **Online URL**:  https://share.streamlit.io/cmu-ids-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/main/main_streamlitapp.py
+* **Link to Paper**:  https://github.com/CMU-IDS-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/blob/main/Report.md
 * **Team members**:
   * Contact person: Janice Blane, jblane@andrew.cmu.edu
   * Riddhiman Lahiri, rlahiri@andrew.cmu.edu
