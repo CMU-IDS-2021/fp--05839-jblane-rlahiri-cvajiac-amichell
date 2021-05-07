@@ -1,6 +1,7 @@
 # CMU Interactive Data Science Final Project
 
 * **Online URL**:  https://share.streamlit.io/cmu-ids-2021/fp--05839-jblane-rlahiri-cvajiac-amichell/main/main_streamlitapp.py
+* Note: StreamLit has recently released a feature where it supports system "Light/Dark" mode settings in deployed applications on their website.  Our application is best viewed in "Light" mode and if your system default is "Dark" mode some text and visualizations may be difficult to view.
 * **Team members**:
   * Contact person: Janice Blane, jblane@andrew.cmu.edu
   * Riddhiman Lahiri, rlahiri@andrew.cmu.edu
