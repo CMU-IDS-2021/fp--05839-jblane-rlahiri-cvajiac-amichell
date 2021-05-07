@@ -11,8 +11,11 @@
 * **Track**: Interactive Application
 
 ## Summary Image
+
 ![Introduction Home Page](image_home.png)
+
 ![Main Interface Page](image_main.png)
+
 ## Abstract
 
 The Apache Spark framework currently uses a tabular user interface, which offers limited usefulness for users. The project, “A Better Spark User Interface”, considers the short falls of the original interface by creating more intuitive visual encodings and offering clearer insight into the operations of a Spark application. The interface uses two common Spark jobs - a word count and Extract, Transform, Load (ETL) job, and visualizes the implications of using varying optimization techniques to facilitate improving system performance.
@@ -25,9 +28,9 @@ Riddhiman primarily designed the layout for the main interface page, including t
 
 Janice primarily worked on designing the homepage. This included deciding the overall design, selecting what content would be presented, and integrating fun html features to highlight some of the major points on the page, such as the expanders, the image gallery carousel in the second section, and the image hover feature in the third section.
 
-Andre
+Andre worked primarily in data generation and collection while devoting some time to user interface refinement and creating the visualizations from our generated data.
 
-Catalina
+Catalina was primarily responsible for implementing the charts within the main interface page.  This included combining Janice and Riddhiman's designs with the data Andre generated.
 
 ## Deliverables
 
@@ -45,5 +48,5 @@ Catalina
 
 - [X] All code for the project should be in the repo.
 - [X] A 5 minute video demonstration.
-- [ ] Update ReadMe according to Canvas instructions.
-- [ ] A detailed [project report](Report.md). The contact should submit the video and report as a PDF on Canvas.
+- [X] Update ReadMe according to Canvas instructions.
+- [X] A detailed [project report](Report.md). The contact should submit the video and report as a PDF on Canvas.
