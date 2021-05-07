@@ -10,7 +10,8 @@
 * **Track**: Interactive Application
 
 ## Summary Image
-
+![Introduction Home Page](image_home.png)
+![Main Interface Page](image_main.png)
 ## Abstract
 
 The Apache Spark framework currently uses a tabular user interface, which offers limited usefulness for users. The project, “A Better Spark User Interface”, considers the short falls of the original interface by creating more intuitive visual encodings and offering clearer insight into the operations of a Spark application. The interface uses two common Spark jobs - a word count and Extract, Transform, Load (ETL) job, and visualizes the implications of using varying optimization techniques to facilitate improving system performance.
