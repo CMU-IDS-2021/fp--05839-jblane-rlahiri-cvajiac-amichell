@@ -8,6 +8,12 @@
   * Catalina Vajiac, cvajiac@andrew.cmu.edu
 * **Track**: Interactive Application
 
+## Summary Image
+
+## Abstract
+
+The Apache Spark framework currently uses a tabular user interface, which offers limited usefulness for users. The project, “A Better Spark User Interface”, considers the short falls of the original interface by creating more intuitive visual encodings and offering clearer insight into the operations of a Spark application. The interface uses two common Spark jobs - a word count and Extract, Transform, Load (ETL) job, and visualizes the implications of using varying optimization techniques to facilitate improving system performance.
+
 ## Work distribution
 
 Early in the planning process, the group met to decide on the topic for the project and what type of application would be created. The group then divided the responsibilities of the project and set milestones to meet based on the course assignment turn-in schedule. Each week, they met to assess the progress made on the project and to ask for any assistance if needed. Throughout the course of the project, though members of the team were assigned certain areas to focus on, each member participated in troubleshooting and providing ideas to help contribute to the overall completion of the project.
